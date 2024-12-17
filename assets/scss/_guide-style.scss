@@ -1,0 +1,33 @@
+@use "_responsive" as *;
+@use "_color" as *;
+
+@mixin ct-flex($dir: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  @if ($dir != row) {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: 1rem;
+}
+
+@mixin ct-grid($cols: 1, $cols-md: 2, $cols-lg: 3, $cols-xl: 4) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-content: center;
+  @include tablet {
+    grid-template-columns: repeat($cols-md, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat($cols-lg, 1fr);
+  }
+
+  @include desktop-xl {
+    grid-template-columns: repeat($cols-xl, 1fr);
+  }
+}

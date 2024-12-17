@@ -1,0 +1,75 @@
+@media screen and (min-width: 640px) {
+}
+
+@media screen and (min-width: 640px) and (orientation: landscape) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("../fonts/Linotte/Linotte-Regular.eot");
+  src: url("../fonts/Linotte/Linotte-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Linotte/Linotte-Regular.woff2") format("woff2"),
+    url("../fonts/Linotte/Linotte-Regular.woff") format("woff"),
+    url("../fonts/Linotte/Linotte-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Linotte-Bold";
+  src: url("../fonts/Linotte/Linotte-Bold.eot");
+  src: url("../fonts/Linotte/Linotte-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Linotte/Linotte-Bold.woff2") format("woff2"),
+    url("../fonts/Linotte/Linotte-Bold.woff") format("woff"),
+    url("../fonts/Linotte/Linotte-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dongle";
+  src: url("../fonts/Dongle/Dongle-Regular.eot");
+  src: url("../fonts/Dongle/Dongle-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Dongle/Dongle-Regular.woff2") format("woff2"),
+    url("../fonts/Dongle/Dongle-Regular.woff") format("woff"),
+    url("../fonts/Dongle/Dongle-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dongle-Bold";
+  src: url("../fonts//Dongle/Dongle-Bold.eot");
+  src: url("../fonts//Dongle/Dongle-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts//Dongle/Dongle-Bold.woff2") format("woff2"),
+    url("../fonts//Dongle/Dongle-Bold.woff") format("woff"),
+    url("../fonts//Dongle/Dongle-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: Linotte;
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
