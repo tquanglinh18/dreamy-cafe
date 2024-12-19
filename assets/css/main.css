@@ -73,3 +73,49 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a:hover,
+a:focus,
+a:target,
+a:active,
+button:hover,
+button:focus,
+button:target,
+button:active {
+  text-decoration: none;
+}
+
+/* Custom Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}

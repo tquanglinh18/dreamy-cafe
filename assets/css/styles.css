@@ -1,1 +1,123 @@
+header {
+  width: 100%;
+  position: static;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: transparent;
+}
 
+.header {
+  width: 100%;
+  height: fit-content;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.header__left {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.header__left--logo-dreamy {
+  width: 100%;
+  max-width: 225px;
+}
+.header__left--logo-dreamy img {
+  width: 100%;
+  object-fit: contain;
+}
+.header__left--icon-app {
+  width: 100%;
+  max-width: 105px;
+}
+.header__left--icon-app img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+@media (min-width: 1440px) {
+  .header__left {
+    width: 25%;
+  }
+}
+.header__center {
+  width: 60%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: linear-gradient(to bottom, #ef797c, #f5c7c7);
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+.header__center--item {
+  width: 33.33%;
+  padding: 0rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  border-left: 2px solid #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.header__center--item:first-child {
+  border-left: none;
+  padding-left: 0rem;
+}
+.header__center--item:last-child {
+  padding-right: 0rem;
+}
+.header__center--item a {
+  color: #fff;
+  font-size: 1rem;
+}
+@media (min-width: 1080px) {
+  .header__center--item a {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1440px) {
+  .header__center--item a {
+    font-size: 1.75rem;
+  }
+}
+.header__center img {
+  width: 100%;
+  max-width: 269px;
+  object-fit: contain;
+}
+@media (min-width: 1440px) {
+  .header__center {
+    width: 50%;
+  }
+}
+.header__right {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__right img {
+  width: 100%;
+  max-width: 218px;
+  object-fit: contain;
+}
+@media (min-width: 1440px) {
+  .header__right {
+    width: 25%;
+  }
+}

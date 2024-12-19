@@ -2,4 +2,106 @@
 @use "_color" as *;
 @use "_guide-style" as *;
 
+header {
+  width: 100%;
+  position: static;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: transparent;
+}
+.header {
+  width: 100%;
+  height: fit-content;
+  padding: 0 1rem;
+  @include ct-flex(row, space-between, stretch, 0.5rem);
 
+  &__left {
+    width: 20%;
+    @include ct-flex(row, center, center, 1rem);
+    &--logo-dreamy {
+      width: 100%;
+      max-width: 225px;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    &--icon-app {
+      width: 100%;
+      max-width: 105px;
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+    }
+    @include desktop-xl {
+      width: 25%;
+    }
+  }
+
+  &__center {
+    width: 60%;
+    padding: 1.5rem 1rem;
+    @include ct-flex(row, center, center, 0);
+    background: linear-gradient(
+      to bottom,
+      $pink-header-ef797c,
+      $pink-header-f5c7c7
+    );
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    &--item {
+      width: 33.33%;
+      padding: 0rem 0.5rem;
+      @include ct-flex(row, center, center, 1rem);
+      color: $white;
+      border-left: 2px solid $white;
+      text-transform: uppercase;
+      font-weight: bold;
+      &:first-child {
+        border-left: none;
+        padding-left: 0rem;
+      }
+
+      &:last-child {
+        padding-right: 0rem;
+      }
+      a {
+        color: $white;
+        font-size: 1rem;
+        @include desktop {
+          font-size: 1.25rem;
+        }
+        @include desktop-xl {
+          font-size: 1.75rem;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 269px;
+      object-fit: contain;
+    }
+
+    @include desktop-xl {
+      width: 50%;
+    }
+  }
+
+  &__right {
+    width: 20%;
+    @include ct-flex(row, center, center, 0.5rem);
+    img {
+      width: 100%;
+      max-width: 218px;
+      object-fit: contain;
+    }
+
+    @include desktop-xl {
+      width: 25%;
+    }
+  }
+}

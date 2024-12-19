@@ -1,7 +1,12 @@
 @use "_responsive" as *;
 @use "_color" as *;
 
-@mixin ct-flex($dir: row, $justify-content: center, $align-items: center) {
+@mixin ct-flex(
+  $dir: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 1rem
+) {
   display: flex;
   @if ($dir != row) {
     flex-direction: column;
@@ -10,7 +15,7 @@
   }
   justify-content: $justify-content;
   align-items: $align-items;
-  gap: 1rem;
+  gap: $gap;
 }
 
 @mixin ct-grid($cols: 1, $cols-md: 2, $cols-lg: 3, $cols-xl: 4) {
