@@ -51,25 +51,97 @@
 
 @font-face {
   font-family: "Dongle-Bold";
-  src: url("../fonts//Dongle/Dongle-Bold.eot");
-  src: url("../fonts//Dongle/Dongle-Bold.eot?#iefix")
+  src: url("../fonts/Dongle/Dongle-Bold.eot");
+  src: url("../fonts/Dongle/Dongle-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Dongle/Dongle-Bold.woff2") format("woff2"),
+    url("../fonts/Dongle/Dongle-Bold.woff") format("woff"),
+    url("../fonts/Dongle/Dongle-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cocon";
+  src: url("../fonts/Cocon/VN-Cocon-Regular.eot");
+  src: url("../fonts/Cocon/VN-Cocon-Regular.eot?#iefix")
       format("embedded-opentype"),
-    url("../fonts//Dongle/Dongle-Bold.woff2") format("woff2"),
-    url("../fonts//Dongle/Dongle-Bold.woff") format("woff"),
-    url("../fonts//Dongle/Dongle-Bold.ttf") format("truetype");
+    url("../fonts/Cocon/VN-Cocon-Regular.woff2") format("woff2"),
+    url("../fonts/Cocon/VN-Cocon-Regular.woff") format("woff"),
+    url("../fonts/Cocon/VN-Cocon-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cocon-Bold";
+  src: url("../fonts/Cocon/VN-Cocon-Bold.eot");
+  src: url("../fonts/Cocon/VN-Cocon-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Cocon/VN-Cocon-Bold.woff2") format("woff2"),
+    url("../fonts/Cocon/VN-Cocon-Bold.woff") format("woff"),
+    url("../fonts/Cocon/VN-Cocon-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: Linotte;
+  font-family: "Dongle";
   font-weight: normal;
   font-style: normal;
+  background-color: #fff;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a:hover,
+a:focus,
+a:target,
+a:active,
+button:hover,
+button:focus,
+button:target,
+button:active {
+  text-decoration: none;
+}
+
+/* Custom Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
 }

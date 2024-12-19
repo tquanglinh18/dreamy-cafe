@@ -1,5 +1,492 @@
 @use "_responsive" as *;
 @use "_color" as *;
 @use "_guide-style" as *;
+@use "_animation" as *;
 
+header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+.header {
+  width: 100%;
+  max-height: 148px;
+  padding: 0.5rem;
+  background-color: $bg-header-mobile-color;
+  background-image: url("../images/bg_header_mobile.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  border-bottom: 1px solid $white;
+  @include ct-flex(row, space-between, center);
 
+  @include desktop {
+    height: 120px;
+    padding: 0;
+    @include ct-flex(row, start, center);
+    background-color: $bg-header-color;
+    background-image: none;
+  }
+  &__logo {
+    @include desktop {
+      padding: 0.5rem;
+    }
+    &--desk {
+      display: none;
+      @include desktop {
+        display: block;
+        width: 100%;
+        max-width: 186;
+        min-width: 124px;
+        padding: 0 1.5rem;
+        @include blinker-animation(3s, true, false);
+        img {
+          width: 100%;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    &--mobile {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1/1;
+      img {
+        width: 100%;
+        max-width: 100px;
+        min-width: 36px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__lst-action {
+    height: 100%;
+    @include ct-flex(row, center, center);
+    &--desk {
+      display: none;
+      @include desktop {
+        height: 100%;
+        @include ct-flex(row, start, center);
+      }
+    }
+    &--mobile {
+      @include ct-flex(row, start, center, 0.75rem);
+      @include desktop {
+        display: none;
+      }
+    }
+
+    .action-item {
+      width: fit-content;
+      height: 100%;
+      min-width: 148px;
+      padding: 0.5rem;
+      color: $text-header-color;
+      text-transform: uppercase;
+      text-align: center;
+      @include ct-flex(row, center, center);
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: relative;
+      cursor: pointer;
+      z-index: 0;
+
+      @include desktop-xl {
+        min-width: 185px;
+        font-size: 42px;
+      }
+      p {
+        transition: all 0.3s ease;
+      }
+
+      &--mobile {
+        img {
+          width: 100%;
+          min-width: 64px;
+          max-width: 230px;
+          aspect-ratio: 228/113;
+          object-fit: contain;
+        }
+      }
+
+      &--lst-sub {
+        display: none;
+      }
+
+      &:hover {
+        > p {
+          transform: scal e(1.2);
+        }
+        &::before {
+          content: "";
+          width: fit-content;
+          min-width: 185px;
+          background-image: url("../images/img_tab_active.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          bottom: -0.675rem;
+          position: absolute;
+          top: -0.5rem;
+          z-index: -1;
+        }
+        .action-item--lst-sub {
+          @include ct-flex(column, start, start, 0.25rem);
+          min-width: 262px;
+          padding: 0.5rem 1rem;
+          background-image: url("../images/frame_sub_menu.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          top: 7rem;
+        }
+      }
+
+      .sub-item {
+        width: 100%;
+        @include ct-flex(row, start, center);
+        border-bottom: 1px solid $white;
+        padding: 0.25rem 0.75rem;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 1.5rem;
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: $sub-menu-hover-color;
+          border-radius: 0.5rem;
+        }
+
+        &--icon {
+          width: 32px;
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn-menu-mobile {
+    display: block;
+    img {
+      width: 100%;
+      min-width: 36px;
+      max-width: 96px;
+      object-fit: contain;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.pined-quick-action {
+  display: none;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  @include desktop {
+    display: block;
+  }
+  .quick-action {
+    position: relative;
+    &--frame {
+    }
+
+    &--content {
+      width: 100%;
+      @include ct-flex(column, start, center, 0.75rem);
+      position: absolute;
+      bottom: 1.5rem;
+      .btn-recharge-card {
+        width: 100%;
+        @include ct-flex(row, center, center);
+        cursor: pointer;
+        img {
+          width: 80%;
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          img {
+            @include blinker-animation(0.5s);
+          }
+        }
+      }
+
+      .qr-download {
+        position: relative;
+        &--frame {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+
+        &--code {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          padding: 0.25rem;
+
+          img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .lst-download-method {
+        @include ct-flex(column, start, center, 0.25rem);
+        .download-method {
+          width: 100%;
+          cursor: pointer;
+          img {
+            width: 100%;
+            transition: all 0.3s ease;
+          }
+          &:hover {
+            img {
+              @include blinker-animation(0.5s);
+            }
+          }
+        }
+      }
+
+      .lst-social {
+        @include ct-flex(row, center, center, 0.25rem);
+        flex-wrap: wrap;
+        .social-method {
+          cursor: pointer;
+          padding: 0 0.25rem;
+          img {
+            width: 42px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            transition: all 0.3s ease;
+          }
+          &:hover {
+            img {
+              @include blinker-animation(0.5s);
+            }
+          }
+        }
+      }
+    }
+
+    &--arrow {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, 25%);
+      cursor: pointer;
+      img {
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        img {
+          @include blinker-animation(0.5s);
+        }
+      }
+    }
+  }
+}
+
+.main-section {
+  position: relative;
+  .img-background {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+
+    &--mobile {
+      display: block;
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desk {
+      display: none;
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  .img-decor {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+
+    img {
+      width: 100%;
+      overflow: hidden;
+      animation: updowninfiity 3s ease infinite, blinker 6s ease infinite;
+    }
+
+    &--mobile {
+      display: block;
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desk {
+      display: none;
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  .section-content {
+    width: 100%;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include desktop {
+      top: 10%;
+    }
+  }
+  .section-logo {
+    width: 50%;
+    max-width: 548px;
+    margin: 0 auto;
+    margin-bottom: 12%;
+    img {
+      width: 100%;
+      @include blinker-animation(2s, true, false);
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .section-title {
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+
+    @include desktop {
+      width: 100%;
+      max-width: 871px;
+      margin-bottom: 8%;
+    }
+    &--heading {
+      width: 100%;
+      img {
+        width: 100%;
+        @include blinker-animation(2s, true, false);
+      }
+    }
+    &--play-introduction {
+      width: 10%;
+      position: absolute;
+      top: 15%;
+      right: 35%;
+      transform: translate(25%, 5%);
+      cursor: pointer;
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          @include blinker-animation(1s);
+        }
+      }
+    }
+  }
+
+  .section-action {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 672px;
+    margin: 0 auto;
+    @include desktop {
+      @include ct-flex(row, center, center);
+    }
+    .frame-box {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .box-action {
+      position: absolute;
+      inset: 0;
+      @include ct-flex(row, center, center, 0rem);
+      transform: translate(-0.25rem, -0.75rem);
+      padding: 0.5rem 2.5rem;
+      &__left {
+        width: 35%;
+        @include ct-flex(column, center, center, 0.5rem);
+        &--item {
+          width: 100%;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          img {
+            width: 100%;
+          }
+
+          &:hover {
+            @include blinker-animation(0.6s, true);
+          }
+        }
+      }
+      &__decor {
+        width: 20%;
+        z-index: 1;
+        img {
+          width: 100%;
+          transform: scale(1.2) translateX(0.5rem);
+        }
+      }
+      &__right {
+        width: 45%;
+        @include ct-flex(row, center, center, 0.5rem);
+        &--item {
+          transition: all 0.3s ease;
+          cursor: pointer;
+          img {
+            width: 100%;
+          }
+
+          &:hover {
+            @include blinker-animation(0.6s, true);
+          }
+        }
+      }
+    }
+  }
+}
