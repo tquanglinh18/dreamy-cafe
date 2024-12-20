@@ -1,35 +1,67 @@
 @use "_responsive" as *;
 @use "_color" as *;
 @use "_guide-style" as *;
+@use "_animation" as *;
+
+body {
+  background: url("../images/bg_fullpage_mobile.png") no-repeat center
+    center/cover;
+}
+
+@include desktop {
+  body {
+    background: url("../images/bg_fullpage.png") no-repeat top center/cover;
+  }
+}
 
 header {
   width: 100%;
-  position: static;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
-  background-color: transparent;
+  z-index: 999;
+  background-color: $pink-header-ef797c;
+  @include desktop {
+    // background-color: $blur-header-4fdbff;
+    background-color: transparent;
+  }
 }
 .header {
   width: 100%;
   height: fit-content;
-  padding: 0 1rem;
-  @include ct-flex(row, space-between, stretch, 0.5rem);
+  padding: 0;
+  @include ct-flex(row, space-between, stretch);
 
+  @include desktop {
+    padding: 0 1rem;
+  }
   &__left {
-    width: 20%;
+    width: fit-content;
     @include ct-flex(row, center, center, 1rem);
+    padding: 0.5rem;
     &--logo-dreamy {
       width: 100%;
-      max-width: 225px;
+      max-width: 224px;
       img {
         width: 100%;
         object-fit: contain;
       }
+      display: none;
+      @include desktop {
+        display: block;
+      }
     }
     &--icon-app {
       width: 100%;
-      max-width: 105px;
+      max-width: 48px;
+
+      @include tablet {
+        max-width: 84px;
+      }
+      @include desktop {
+        max-width: 102px;
+      }
       img {
         width: 100%;
         aspect-ratio: 1/1;
@@ -39,12 +71,23 @@ header {
     @include desktop-xl {
       width: 25%;
     }
+    a {
+      img {
+        transition: all 0.3s ease;
+        &:hover {
+          @include blinker-animation(0.5s);
+        }
+      }
+    }
   }
 
   &__center {
+    display: none;
+    @include desktop {
+      @include ct-flex(row, center, center, 0);
+    }
     width: 60%;
     padding: 1.5rem 1rem;
-    @include ct-flex(row, center, center, 0);
     background: linear-gradient(
       to bottom,
       $pink-header-ef797c,
@@ -70,12 +113,16 @@ header {
       }
       a {
         color: $white;
-        font-size: 1rem;
-        @include desktop {
-          font-size: 1.25rem;
+        font-size: clamp(1rem, 1vw + 0.25rem, 2rem);
+        transition: all 0.3s ease;
+        img {
+          transition: all 0.3s;
         }
-        @include desktop-xl {
-          font-size: 1.75rem;
+        &:hover {
+          @include blinker-animation(0.5s);
+          img {
+            @include blinker-animation(0.5s);
+          }
         }
       }
     }
@@ -92,16 +139,287 @@ header {
   }
 
   &__right {
-    width: 20%;
-    @include ct-flex(row, center, center, 0.5rem);
+    width: 100%;
+    padding: 0.5rem;
+    @include desktop {
+      width: 25%;
+    }
+    @include ct-flex(row, center, center, 0.25rem);
+    &--item {
+      width: 100%;
+      max-width: 248px;
+    }
     img {
       width: 100%;
-      max-width: 218px;
+      aspect-ratio: 230/93;
       object-fit: contain;
     }
-
+    @include desktop {
+      img {
+        width: 100%;
+        max-width: 218px;
+        object-fit: contain;
+      }
+    }
     @include desktop-xl {
       width: 25%;
+    }
+
+    a {
+      img {
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        img {
+          @include blinker-animation(0.5s);
+        }
+      }
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 1rem;
+  @include ct-flex(column, center, center, 1rem);
+  position: relative;
+  margin-bottom: 4%;
+  &--logo {
+    @include desktop {
+      display: none;
+    }
+  }
+  &--decor {
+    width: 100%;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    @include ct-flex(row, center, center);
+    .decor-item {
+      &.blindbox {
+        position: relative;
+        width: 33.33%;
+        img {
+          width: 100%;
+          object-fit: content;
+        }
+        @include desktop {
+          width: unset;
+          position: absolute;
+          top: 50%;
+          left: 2%;
+          transform: translate(0, -50%);
+        }
+        @include desktop-xl {
+          left: 12%;
+        }
+      }
+
+      &.apple-watch {
+        position: relative;
+        width: 33.33%;
+        img {
+          width: 100%;
+          object-fit: content;
+        }
+        @include desktop {
+          width: unset;
+          position: absolute;
+          top: 10%;
+          right: 2%;
+        }
+        @include desktop-xl {
+          right: 12%;
+        }
+      }
+
+      &.lemondane {
+        position: relative;
+        width: 33.33%;
+        img {
+          width: 100%;
+          object-fit: content;
+        }
+        @include desktop {
+          width: unset;
+          position: absolute;
+          bottom: 10%;
+          right: 2%;
+        }
+        @include desktop-xl {
+          right: 12%;
+        }
+      }
+    }
+  }
+
+  &--title {
+    position: relative;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+    .btn-play-introduction {
+      width: 10%;
+      position: absolute;
+      bottom: 20.5%;
+      right: 27%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        img {
+          @include blinker-animation();
+        }
+      }
+    }
+  }
+
+  &--action {
+    .btn-download {
+      width: 60%;
+      margin: 0 auto;
+      @include desktop {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      @include blink-scale-eff(1.5s);
+    }
+  }
+
+  &--content {
+    width: 100%;
+    @include ct-flex(column, center, center, 1rem);
+  }
+}
+
+.gift-milestones {
+  width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  @include ct-flex(row, center, center);
+  @include desktop {
+    padding-left: 4%;
+  }
+
+  .gift-milestones--controler {
+    width: 60%;
+    @include ct-flex(row, center, center);
+    @include desktop {
+      width: 50%;
+    }
+  }
+  .carousel-inner {
+    width: 40%;
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  .carousel-indicators {
+    position: relative;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    @include ct-flex(column, center, center);
+    li {
+      display: none;
+      width: 100%;
+      max-width: 348px;
+      height: fit-content;
+      text-indent: 0;
+      background-color: transparent;
+      background: url("../images/frame_gift_milestones.png") no-repeat center;
+      background-size: 100% 100%;
+      padding: 0 1.5rem;
+      aspect-ratio: 348/247;
+      &.active {
+        @include ct-flex(row, center, center);
+        img {
+          @include blinker-animation(0.6s);
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .carousel-item {
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .carousel-control-prev {
+    position: relative;
+    inset: 0;
+    opacity: 1;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .carousel-control-next {
+    position: relative;
+    inset: 0;
+    opacity: 1;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+#gift-milestones {
+  .section {
+    &--title {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      @include desktop {
+        padding-left: 4%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    &--decor {
+      display: none;
+      @include desktop {
+        display: block;
+      }
+      .decor-item {
+        width: 100%;
+        max-width: 512px;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &--content {
+      z-index: 1;
     }
   }
 }

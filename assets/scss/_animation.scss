@@ -1,0 +1,56 @@
+@keyframes blinker {
+  from {
+    filter: brightness(105%);
+  }
+  50% {
+    filter: brightness(95%);
+  }
+
+  to {
+    filter: brightness(105%);
+  }
+}
+
+@keyframes updowninfiity {
+  from {
+    transform: translate(0, -0.25rem);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  to {
+    transform: translate(0, -0.25rem);
+  }
+}
+
+@keyframes scaleInfiity {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@mixin blinker-animation($timer: 0.3s, $isInfinity: true, $isScale: true) {
+  @if ($isInfinity == false) {
+    animation: blinker $timer ease;
+    transform: scale(1.05);
+  } @else if($isScale == false) {
+    animation: blinker $timer infinite ease;
+  } @else {
+    animation: blinker $timer infinite ease;
+    transform: scale(1.05);
+  }
+}
+
+@mixin blink-scale-eff($timer: 0.3s, $isInfinity: true, $isScale: true) {
+  @if ($isInfinity == false) {
+    animation: blinker $timer ease, scaleInfiity $timer ease;
+  } @else {
+    animation: blinker $timer infinite ease, scaleInfiity $timer infinite ease;
+  }
+}
