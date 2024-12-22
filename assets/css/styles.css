@@ -126,11 +126,6 @@ header {
 }
 .header__center {
   display: none;
-  width: 60%;
-  padding: 1.5rem 1rem;
-  background: linear-gradient(to bottom, #ef797c, #f5c7c7);
-  border-bottom-right-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
 }
 @media (min-width: 1080px) {
   .header__center {
@@ -139,6 +134,11 @@ header {
     justify-content: center;
     align-items: center;
     gap: 0;
+    width: 60%;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to bottom, #ef797c, #f5c7c7);
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
   }
 }
 .header__center--item {
@@ -229,6 +229,11 @@ header {
   animation: blinker 0.5s infinite ease;
   transform: scale(1.05);
 }
+@media (min-width: 1080px) {
+  .header__right .btn-register-download-app-store {
+    display: none;
+  }
+}
 
 .section {
   width: 100%;
@@ -246,7 +251,7 @@ header {
     display: none;
   }
 }
-.section--decor {
+.section__decor {
   width: 100%;
   max-width: 1440px;
   margin-right: auto;
@@ -257,16 +262,16 @@ header {
   align-items: center;
   gap: 1rem;
 }
-.section--decor .decor-item.blindbox {
+.section__decor .decor-item.blindbox {
   position: relative;
   width: 33.33%;
 }
-.section--decor .decor-item.blindbox img {
+.section__decor .decor-item.blindbox img {
   width: 100%;
   object-fit: content;
 }
 @media (min-width: 1080px) {
-  .section--decor .decor-item.blindbox {
+  .section__decor .decor-item.blindbox {
     width: unset;
     position: absolute;
     top: 50%;
@@ -275,20 +280,20 @@ header {
   }
 }
 @media (min-width: 1440px) {
-  .section--decor .decor-item.blindbox {
+  .section__decor .decor-item.blindbox {
     left: 12%;
   }
 }
-.section--decor .decor-item.apple-watch {
+.section__decor .decor-item.apple-watch {
   position: relative;
   width: 33.33%;
 }
-.section--decor .decor-item.apple-watch img {
+.section__decor .decor-item.apple-watch img {
   width: 100%;
   object-fit: content;
 }
 @media (min-width: 1080px) {
-  .section--decor .decor-item.apple-watch {
+  .section__decor .decor-item.apple-watch {
     width: unset;
     position: absolute;
     top: 10%;
@@ -296,20 +301,20 @@ header {
   }
 }
 @media (min-width: 1440px) {
-  .section--decor .decor-item.apple-watch {
+  .section__decor .decor-item.apple-watch {
     right: 12%;
   }
 }
-.section--decor .decor-item.lemondane {
+.section__decor .decor-item.lemondane {
   position: relative;
   width: 33.33%;
 }
-.section--decor .decor-item.lemondane img {
+.section__decor .decor-item.lemondane img {
   width: 100%;
   object-fit: content;
 }
 @media (min-width: 1080px) {
-  .section--decor .decor-item.lemondane {
+  .section__decor .decor-item.lemondane {
     width: unset;
     position: absolute;
     bottom: 10%;
@@ -317,18 +322,18 @@ header {
   }
 }
 @media (min-width: 1440px) {
-  .section--decor .decor-item.lemondane {
+  .section__decor .decor-item.lemondane {
     right: 12%;
   }
 }
-.section--title {
+.section__header {
   position: relative;
   z-index: 1;
 }
-.section--title img {
+.section__header img {
   width: 100%;
 }
-.section--title .btn-play-introduction {
+.section__header .btn-play-introduction {
   width: 10%;
   position: absolute;
   bottom: 20.5%;
@@ -336,13 +341,13 @@ header {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.section--title .btn-play-introduction img {
+.section__header .btn-play-introduction img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: contain;
   transition: all 0.3s ease;
 }
-.section--title .btn-play-introduction:hover img {
+.section__header .btn-play-introduction:hover img {
   animation: blinker 0.3s infinite ease;
   transform: scale(1.05);
 }
@@ -361,13 +366,16 @@ header {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.section--content {
+.section__body {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.section__footer {
+  width: 100%;
 }
 
 .gift-milestones {
@@ -467,7 +475,7 @@ header {
   object-fit: contain;
 }
 
-#gift-milestones .section--title {
+#gift-milestones .section___header {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
@@ -475,32 +483,229 @@ header {
   margin-bottom: 2rem;
 }
 @media (min-width: 1080px) {
-  #gift-milestones .section--title {
+  #gift-milestones .section___header {
     padding-left: 4%;
   }
 }
-#gift-milestones .section--title img {
+#gift-milestones .section___header img {
   width: 100%;
 }
-#gift-milestones .section--decor {
+#gift-milestones .section__decor {
   display: none;
 }
 @media (min-width: 1080px) {
-  #gift-milestones .section--decor {
+  #gift-milestones .section__decor {
     display: block;
   }
 }
-#gift-milestones .section--decor .decor-item {
+#gift-milestones .section__decor .decor-item {
   width: 100%;
   max-width: 512px;
   position: absolute;
   top: 20%;
   left: 0;
 }
-#gift-milestones .section--decor .decor-item img {
+#gift-milestones .section__decor .decor-item img {
   width: 100%;
   object-fit: contain;
 }
-#gift-milestones .section--content {
+#gift-milestones .section__body {
   z-index: 1;
+}
+
+.register-progress {
+  position: relative;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.register-progress .lst-gift-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.register-progress .lst-gift-item .gift-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+.register-progress .lst-gift-item .gift-item--img {
+  background: url("../images/frame_gift_pined.png") no-repeat center;
+  background-size: 100% 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.register-progress .lst-gift-item .gift-item--img img {
+  width: 100%;
+  object-fit: contain;
+}
+.register-progress .lst-gift-item .gift-item--active .milestone {
+  border-color: #fef785;
+  background-color: #f45366;
+  color: #fef785;
+}
+.register-progress .lst-gift-item .gift-item--active .gift-item--img {
+  background: url("../images/frame_gift_pined_active.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.register-progress .progress-bar-range {
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  bottom: 4%;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* Track: webkit browsers */
+  /* Track: Mozilla Firefox */
+  /* Thumb: webkit */
+  /* Thumb: Firefox */
+}
+@media (min-width: 1080px) {
+  .register-progress .progress-bar-range {
+    bottom: 5%;
+  }
+}
+@media (min-width: 1440px) {
+  .register-progress .progress-bar-range {
+    bottom: 6%;
+  }
+}
+.register-progress .progress-bar-range input[type=range] {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  width: 85%;
+  margin: 0 auto;
+  height: 1rem;
+  border: 3px solid #00f0ff;
+  border-radius: 0.5rem;
+  background-color: #005f8c !important;
+  cursor: pointer;
+  outline: none;
+  /*  slider progress trick  */
+  overflow: hidden;
+}
+.register-progress .progress-bar-range input[type=range]::-webkit-slider-runnable-track {
+  height: 15px;
+  background: transparent;
+  border-radius: 16px;
+}
+.register-progress .progress-bar-range input[type=range]::-moz-range-track {
+  height: 15px;
+  background: transparent;
+  border-radius: 16px;
+}
+.register-progress .progress-bar-range input[type=range]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  height: 15px;
+  width: 15px;
+  background-color: #fef785;
+  border-radius: 50%;
+  border: 2px solid #fef785;
+  /*  slider progress trick  */
+  box-shadow: -407px 0 0 400px #fef785;
+}
+.register-progress .progress-bar-range input[type=range]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #fef785;
+  border-radius: 50%;
+  border: 1px solid #fef785;
+  /*  slider progress trick  */
+  box-shadow: -407px 0 0 400px #fef785;
+}
+
+.milestone {
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border: 3px solid #00f0ff;
+  border-radius: 0.5rem;
+  background-color: #005f8c;
+  color: #fff;
+  font-weight: bold;
+  font-size: clamp(0.5rem, 1vw + 0.25rem, 2rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#spin-gift .turns-total {
+  position: relative;
+  margin: 2rem 0;
+}
+#spin-gift .turns-total--number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -60%);
+}
+#spin-gift .lst-box-gift {
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#spin-gift .lst-box-gift .box-gift {
+  width: 100%;
+  max-width: 265px;
+  margin: 0 auto;
+}
+#spin-gift .lst-box-gift .box-gift img {
+  width: 100%;
+}
+#spin-gift .lst-action-spin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+#spin-gift .decor-item {
+  z-index: 0;
+}
+#spin-gift .decor-item.img-gift-blindbox {
+  position: absolute;
+  top: clamp(1%, 10vw + 2%, 10%);
+  left: clamp(1%, 10vw + 2%, 10%);
+}
+#spin-gift .decor-item.img-gift-aw {
+  position: absolute;
+  top: clamp(1%, 10vw + 2%, 10%);
+  right: clamp(1%, 10vw + 2%, 10%);
+}
+#spin-gift .decor-item.img-gift-lemonade {
+  position: absolute;
+  top: clamp(20%, 10vw + 2%, 40%);
+  left: clamp(1%, 10vw + 1%, 3%);
 }
