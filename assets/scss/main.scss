@@ -309,6 +309,19 @@ header {
 
   &__footer {
     width: 100%;
+    @include ct-flex(column, center, center, 2rem);
+
+    .spin-button {
+      width: 100%;
+      max-width: 210px;
+      display: block;
+      img {
+        width: 100%;
+      }
+      @include desktop {
+        display: none;
+      }
+    }
   }
 }
 
@@ -565,55 +578,154 @@ header {
 
 #spin-gift {
   .turns-total {
+    width: 40%;
+    max-width: 333px;
     position: relative;
     margin: 2rem 0;
     &--number {
+      width: 100%;
+      text-align: center;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-60%, -60%);
+      transform: translate(-50%, -55%);
+      color: white;
+      font-size: 1.875rem;
+      font-weight: bold;
+      text-shadow: -1px -1px 0 #a54b47, 1px -1px 0 #a54b47, -1px 1px 0 #a54b47,
+        1px 1px 0 #a54b47;
+    }
+
+    img {
+      width: 100%;
     }
   }
   .lst-box-gift {
     z-index: 1;
-    width: 100%;
+    width: 33.33%;
     max-width: 1280px;
     margin: 2rem auto;
     @include ct-flex(row, center, center, 1rem);
+    @include desktop {
+      width: 66.66%;
+    }
     .box-gift {
       width: 100%;
       max-width: 265px;
       margin: 0 auto;
+      display: none;
+      @include desktop {
+        display: block;
+      }
+      &:first-child {
+        display: block;
+      }
       img {
         width: 100%;
       }
     }
   }
   .lst-action-spin {
-    @include ct-flex(row, space-between, center, 1rem);
+    @include ct-flex(row, space-evenly, center, 1rem);
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
+    img {
+      width: 100%;
+      max-width: 296px;
+    }
   }
 
   .decor-item {
     z-index: 0;
     &.img-gift-blindbox {
+      width: 30%;
+      max-width: 248px;
       position: absolute;
-      top: clamp(1%, 10vw + 2%, 10%);
-      left: clamp(1%, 10vw + 2%, 10%);
+      top: 30%;
+      left: 4%;
+
+      @include desktop-xl {
+        max-width: 321px;
+        top: 20%;
+        left: 8%;
+      }
+      img {
+        width: 100%;
+      }
     }
 
     &.img-gift-aw {
+      width: 30%;
+      max-width: 248px;
       position: absolute;
-      top: clamp(1%, 10vw + 2%, 10%);
-      right: clamp(1%, 10vw + 2%, 10%);
+      top: 45%;
+      right: 4%;
+
+      @include desktop {
+        top: 30%;
+      }
+      @include desktop-xl {
+        max-width: 297px;
+        top: 25%;
+      }
+      img {
+        width: 100%;
+      }
     }
 
     &.img-gift-lemonade {
+      width: 30%;
+      max-width: 240px;
       position: absolute;
-      top: clamp(20%, 10vw + 2%, 40%);
-      left: clamp(1%, 10vw + 1%, 3%);
+      bottom: 15%;
+      left: -2%;
+      img {
+        width: 100%;
+      }
+      @include tablet {
+        left: 2%;
+      }
+
+      @include desktop {
+        left: -2%;
+      }
+
+      @include desktop-xl {
+        max-width: 268px;
+        bottom: 15%;
+        left: 4%;
+        left: 2%;
+      }
+    }
+  }
+}
+
+#slide-future {
+  .carousel-indicators {
+    position: relative;
+  }
+
+  .carousel-inner {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: url("../images/s4_frame_slide.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .carousel-item {
+    width: 100%;
+    border-radius: 15%;
+    aspect-ratio: 963/580;
+
+    img {
+      width: 100%;
+      border-radius: 15%;
+      aspect-ratio: 963/580;
+      object-fit: cover;
+      overflow: hidden;
     }
   }
 }
