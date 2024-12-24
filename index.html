@@ -12,6 +12,58 @@
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
+<div id="ct-modal-base" class="modal" style="display: block;" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <img src="./assets/images/img_title_history.png" alt="">
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="table-history" class="table-history">
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Vật phẩm nhận được</th>
+                <th>Thời gian</th>
+                <th>Giftcode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Xu chiêu mộ cao cấp x3</td>
+                <td>
+                  00:00:00
+                  <br />
+                  18/12/24
+                </td>
+
+                <td>
+                  <input type="text" readonly value="abcdxyzcdei">
+
+                  <div type="button">
+                    <img src="./assets/images/btn_copy.png" alt="">
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <header>
   <div class="header">
     <div class="header__left">
@@ -19,7 +71,7 @@
         <a href=""><img src="./assets/images/img_icon_app.png" alt=""></a>
       </div>
       <div class="header__left--logo-dreamy">
-        <a href=""><img src="./assets/images/img_logo_dreamy.png" alt=""></a>
+        <a href="" type="scroll-to-section"><img src="./assets/images/img_logo_dreamy.png" alt=""></a>
       </div>
     </div>
     <div class="header__center">
@@ -27,10 +79,10 @@
         <a href=""><img src="./assets/images/btn_download_header.png" alt=""></a>
       </div>
       <div class="header__center--item">
-        <a href="">Tải ngay đạt mốc</a>
+        <a href="#gift-milestones" type="scroll-to-section">Tải ngay đạt mốc</a>
       </div>
       <div class="header__center--item">
-        <a href="">Túi mù may mắn</a>
+        <a href="#spin-gift" type="scroll-to-section">Túi mù may mắn</a>
       </div>
     </div>
     <div class="header__right">
@@ -49,12 +101,11 @@
 
 <section>
   <div class="section">
-
     <div class="section--logo">
       <img src="./assets/images/img_logo_dreamy.png" alt="">
     </div>
     <div class="section__header">
-      <div class="">
+      <div class="img-title-banner">
         <img src="./assets/images/img_title_banner.png" alt="">
       </div>
       <div class="btn-play-introduction">
@@ -278,19 +329,20 @@
           <a class="carousel-control-prev" href="#slide-future" role="button" data-slide="prev">
             <img src="./assets/images/s4_arrow_prev.png" alt="">
           </a>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="https://img.zing.vn/upload/hellocafe/source/thumb-new-1.jpg"
-                alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="https://img-cdn.2game.vn/2024/04/05/hello-cafe-vng-dangkytruoc-1.jpg"
-                alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100"
-                src="https://lh7-us.googleusercontent.com/0MZkm7YGQ5y6417MHPPFB0SIGj8YpcLHAbtz123pfnhyDtZkgruhIpx3BW0i_GvuZGVigzxX396mJwBjfHTB6kGTge6AVZ6YxKs0J9hXA6BjwCGHjPUklznIaauZDTeZojD-PU6W058K0m5BZNf3rZk"
-                alt="Third slide">
+
+          <div class="carousel-frame">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://img.zing.vn/upload/hellocafe/source/thumb-new-1.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img src="https://img-cdn.2game.vn/2024/04/05/hello-cafe-vng-dangkytruoc-1.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://lh7-us.googleusercontent.com/0MZkm7YGQ5y6417MHPPFB0SIGj8YpcLHAbtz123pfnhyDtZkgruhIpx3BW0i_GvuZGVigzxX396mJwBjfHTB6kGTge6AVZ6YxKs0J9hXA6BjwCGHjPUklznIaauZDTeZojD-PU6W058K0m5BZNf3rZk"
+                  alt="Third slide">
+              </div>
             </div>
           </div>
 
@@ -310,10 +362,12 @@
 
     <div class="section__decor">
       <div class="decor-item">
-        <img src="./assets/images/s4_decor_2.png" alt="">
+        <img src="./assets/images/s4_decor_1.png" alt="">
       </div>
 
-
+      <div class="decor-item">
+        <img src="./assets/images/s4_decor_2.png" alt="">
+      </div>
     </div>
   </div>
 </section>

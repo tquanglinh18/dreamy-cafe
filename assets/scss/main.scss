@@ -36,6 +36,13 @@ header {
   @include desktop {
     padding: 0 1rem;
   }
+  background: linear-gradient(
+    to bottom,
+    $pink-header-ef797c,
+    $pink-header-f5c7c7
+  );
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
   &__left {
     width: fit-content;
     @include ct-flex(row, center, center, 1rem);
@@ -87,13 +94,13 @@ header {
       @include ct-flex(row, center, center, 0);
       width: 60%;
       padding: 1.5rem 1rem;
-      background: linear-gradient(
-        to bottom,
-        $pink-header-ef797c,
-        $pink-header-f5c7c7
-      );
-      border-bottom-right-radius: 1.5rem;
-      border-bottom-left-radius: 1.5rem;
+      // background: linear-gradient(
+      //   to bottom,
+      //   $pink-header-ef797c,
+      //   $pink-header-f5c7c7
+      // );
+      // border-bottom-right-radius: 1.5rem;
+      // border-bottom-left-radius: 1.5rem;
     }
     &--item {
       width: 33.33%;
@@ -187,10 +194,13 @@ header {
 .section {
   width: 100%;
   padding: 1rem;
-  @include ct-flex(column, center, center, 1rem);
+  @include ct-flex(column, center, center, 0.5rem);
   position: relative;
-  margin-bottom: 4%;
   overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
   &--logo {
     @include desktop {
       display: none;
@@ -266,11 +276,20 @@ header {
     img {
       width: 100%;
     }
+    .img-title-banner {
+      width: 100%;
+      max-width: 1080px;
+      margin-top: 10%;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
     .btn-play-introduction {
-      width: 10%;
+      width: 8%;
       position: absolute;
-      bottom: 20.5%;
-      right: 27%;
+      bottom: 22%;
+      right: 32.5%;
       transform: translate(-50%, -50%);
       cursor: pointer;
       img {
@@ -630,9 +649,21 @@ header {
       width: 100%;
       max-width: 265px;
       margin: 0 auto;
+      cursor: pointer;
       display: none;
       @include desktop {
         display: block;
+      }
+      img {
+        width: 100%;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          @include blinker-animation(0.5s);
+        }
       }
 
       &:first-child {
@@ -648,9 +679,21 @@ header {
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
-    img {
+
+    .action-item {
       width: 100%;
       max-width: 296px;
+      cursor: pointer;
+      img {
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      &:hover {
+        img {
+          @include blinker-animation(0.5s);
+        }
+      }
     }
   }
 
@@ -747,25 +790,51 @@ header {
     }
   }
 
-  .carousel-inner {
+  .carousel-frame {
     width: 100%;
-    max-width: 768px;
+    max-width: 963px;
+    aspect-ratio: 963/580;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 1rem 1.25rem 1rem;
     background: url("../images/s4_frame_slide.png") no-repeat center;
     background-size: 100% 100%;
+    @include tablet {
+      padding: 1.75rem 1.75rem 2.25rem 1.75rem;
+    }
+    @include desktop {
+      padding: 2.25rem 2.25rem 3rem 2.25rem;
+    }
+  }
+
+  .carousel-inner {
+    width: 100%;
   }
 
   .carousel-item {
     width: 100%;
-    border-radius: 15%;
     aspect-ratio: 963/580;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    @include tablet {
+      border-radius: 2.5rem;
+    }
+    @include desktop {
+      border-radius: 3rem;
+    }
 
     img {
       width: 100%;
-      border-radius: 15%;
       aspect-ratio: 963/580;
       object-fit: cover;
+      border-radius: 1.5rem;
+      @include tablet {
+        border-radius: 2.5rem;
+      }
+      @include desktop {
+        border-radius: 3rem;
+      }
       overflow: hidden;
     }
   }
@@ -773,14 +842,32 @@ header {
 
 #future-game {
   position: relative;
-
   .carousel-control-prev,
   .carousel-control-next {
-    position: relative;
-    display: none;
+    position: absolute;
+    opacity: 1;
+    img {
+      width: 75%;
+    }
 
     @include desktop {
-      display: block;
+      position: relative;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .carousel-control-prev {
+    left: 4%;
+    @include desktop {
+      left: 0;
+    }
+  }
+  .carousel-control-next {
+    right: 4%;
+    @include desktop {
+      right: 0;
     }
   }
 
@@ -791,18 +878,33 @@ header {
         @include desktop {
           display: block;
           position: absolute;
-          top: 0;
           right: 1rem;
           z-index: 0;
+        }
+
+        &:first-child {
+          bottom: -20%;
+          left: 0;
+        }
+
+        &:last-child {
+          top: 0;
+          right: 0;
         }
       }
     }
 
     &__header {
-      transform: translateY(20%);
-      z-index: 2;
       img {
-        width: 75%;
+        width: 100%;
+      }
+
+      @include desktop {
+        transform: translateY(20%);
+        z-index: 2;
+        img {
+          width: 85%;
+        }
       }
     }
 
@@ -814,18 +916,34 @@ header {
 
 .footer {
   width: 100%;
-  background: url("../images/bg_footer.png") no-repeat center;
+  background: url("../images/bg_footer_mobile.png") no-repeat center;
   background-size: cover;
+  @include desktop {
+    background: url("../images/bg_footer.png") no-repeat center;
+    background-size: cover;
+  }
   .footer-top {
     width: 100%;
-    padding: 1.5rem 1rem;
+    padding: 18% 1rem 0 1rem;
     @include ct-flex(row, center, center, 1.5rem);
-    background: url("../images/bg_footer_top.png") no-repeat center;
-    background-size: cover;
+
+    @include tablet {
+      padding: 10% 1rem 0 1rem;
+    }
+    @include desktop {
+      padding: 1.5rem 1rem;
+      background: url("../images/bg_footer_top.png") no-repeat center;
+      background-size: cover;
+    }
 
     img {
       width: 100%;
       object-fit: contain;
+      transition: all 0.3s ease;
+
+      &:hover {
+        @include blinker-animation(0.5s);
+      }
     }
   }
 
@@ -860,6 +978,120 @@ header {
           width: 100%;
           max-width: 242px;
           object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+#ct-modal-base {
+  background-color: rgba(204, 204, 204, 0.7);
+  .modal-dialog {
+    width: 100%;
+    max-width: 768px;
+    aspect-ratio: 1211/1020;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    background-image: url("../images/img_frame_modal.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  button[aria-label="Close"] {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/btn_close_modal.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 1;
+    top: 50%;
+    right: 4%;
+  }
+
+  .modal-header {
+    width: 100%;
+    position: relative;
+    padding: 0 1.5rem;
+    border: none;
+    .modal-title {
+      width: 33.33%;
+      max-width: 362px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+
+      @include desktop {
+        width: 40%;
+      }
+    }
+  }
+
+  .modal-body {
+    border: none;
+    padding: 1rem 1.5rem;
+
+    @include tablet {
+      padding: 1.5rem 2rem;
+    }
+
+    @include desktop {
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  .modal-footer {
+    border: none;
+    padding: 1rem 1.5rem;
+
+    @include tablet {
+      padding: 1.5rem 2rem;
+    }
+
+    @include desktop {
+      padding: 2rem 2.5rem;
+    }
+  }
+}
+
+.table-history {
+  table {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    color: $text-table-df2ec6;
+    thead {
+      width: 100%;
+      font-weight: bold;
+      background-color: $bg-header-table;
+      th {
+        padding: 0.5rem;
+        &:first-child {
+          border-radius: 0.5rem 0 0 0.5rem;
+        }
+
+        &:last-child {
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background: url("../images/img_line_border_table.png") no-repeat bottom;
+        background-size: 100% auto;
+        td {
+          padding: 0.5rem;
         }
       }
     }

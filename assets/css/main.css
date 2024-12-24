@@ -66,9 +66,8 @@ body {
   font-family: Linotte;
   font-weight: normal;
   font-style: normal;
+  scroll-behavior: smooth;
 }
-
-
 
 * {
   margin: 0;
