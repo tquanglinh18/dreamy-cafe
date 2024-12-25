@@ -36,3 +36,7 @@
     grid-template-columns: repeat($cols-xl, 1fr);
   }
 }
+
+.flex-container {
+  @include ct-flex(row, center, center, 1rem);
+}

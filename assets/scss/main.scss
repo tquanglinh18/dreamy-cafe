@@ -984,12 +984,20 @@ header {
   }
 }
 
-#ct-modal-base {
+.ct-modal-base {
   background-color: rgba(204, 204, 204, 0.7);
   .modal-dialog {
     width: 100%;
-    max-width: 768px;
+    max-width: 1200px;
     aspect-ratio: 1211/1020;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    &:hover {
+      @include blink-scale-eff(1s, true, true);
+    }
   }
 
   .modal-content {
@@ -1004,17 +1012,17 @@ header {
     border: none;
   }
 
-  button[aria-label="Close"] {
+  .modal-content button[aria-label="Close"] {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     background-image: url("../images/btn_close_modal.png");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     opacity: 1;
     top: 50%;
-    right: 4%;
+    right: 6%;
   }
 
   .modal-header {
@@ -1040,13 +1048,14 @@ header {
   .modal-body {
     border: none;
     padding: 1rem 1.5rem;
-
+    height: 100%;
+    overflow: auto;
     @include tablet {
       padding: 1.5rem 2rem;
     }
 
     @include desktop {
-      padding: 2rem 2.5rem;
+      padding: 2rem 4rem;
     }
   }
 
@@ -1064,36 +1073,285 @@ header {
   }
 }
 
+table {
+  width: 100%;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  color: $text-table-df2ec6;
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+
+  @include desktop {
+    font-size: 2rem;
+  }
+
+  thead {
+    width: 100%;
+    font-weight: bold;
+    background-color: $bg-header-table;
+    th {
+      padding: 0.5rem;
+      font-size: bold;
+      font-size: 1rem;
+      @include tablet {
+        font-size: 1.5rem;
+      }
+
+      @include desktop {
+        font-size: 2.25rem;
+      }
+      &:first-child {
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+      &:last-child {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background: url("../images/img_line_border_table.png") no-repeat bottom;
+      background-size: 100% auto;
+      td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+  }
+}
+
 .table-history {
   table {
-    width: 100%;
-    align-content: center;
-    text-align: center;
-    color: $text-table-df2ec6;
     thead {
-      width: 100%;
-      font-weight: bold;
-      background-color: $bg-header-table;
       th {
-        padding: 0.5rem;
         &:first-child {
-          border-radius: 0.5rem 0 0 0.5rem;
+          width: 10%;
+        }
+
+        &:nth-child(2) {
+          width: 40%;
+        }
+
+        &:nth-child(3) {
+          width: 20%;
         }
 
         &:last-child {
-          border-radius: 0 0.5rem 0.5rem 0;
+          width: 30%;
         }
       }
     }
 
     tbody {
       tr {
-        background: url("../images/img_line_border_table.png") no-repeat bottom;
-        background-size: 100% auto;
         td {
-          padding: 0.5rem;
+          &:first-child {
+            width: 10%;
+          }
+
+          &:nth-child(2) {
+            width: 40%;
+          }
+
+          &:nth-child(3) {
+            width: 20%;
+          }
+
+          &:last-child {
+            width: 30%;
+            img {
+              width: 100%;
+              max-width: 72px;
+              min-width: 64px;
+              object-fit: contain;
+
+              @include tablet {
+                max-width: 96px;
+              }
+
+              @include desktop {
+                max-width: 120px;
+              }
+            }
+
+            input {
+              width: 100%;
+              max-width: 152px;
+              background-color: #6b6660;
+              color: white;
+              border-radius: 0.5rem;
+              padding: 0.25rem;
+              font-size: 0.75rem;
+              font-weight: bold;
+              text-overflow: ellipsis;
+
+              @include tablet {
+                font-size: 1.25rem;
+                padding: 0.5rem 0.75rem;
+              }
+
+              @include desktop {
+                font-size: 1.75rem;
+                padding: 0.25rem 0.5rem;
+              }
+            }
+          }
         }
       }
     }
+  }
+}
+
+.table-misson {
+  table {
+    thead {
+      th {
+        width: 60%;
+        &:first-child {
+          width: 15%;
+        }
+        &:last-child {
+          width: 25%;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        width: 60%;
+        &:first-child {
+          width: 15%;
+        }
+        &:last-child {
+          width: 25%;
+        }
+
+        td {
+          &:last-child {
+            img {
+              width: 100%;
+              max-width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.guide-content {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  p {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-weight: 600;
+  }
+
+  h5 {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    li {
+      text-indent: 0.5rem;
+    }
+  }
+
+  .text-highlight {
+    color: #ff3c00;
+  }
+}
+
+.td-flex-container {
+  @include ct-flex(column, center, center, 0.25rem);
+
+  @include tablet {
+    @include ct-flex(row);
+  }
+}
+
+#modal-message {
+  .modal-dialog {
+    max-width: 840px;
+  }
+  .modal-content {
+    height: fit-content;
+  }
+  .modal-body {
+    @include ct-flex(column, center, center, 1rem);
+    text-align: center;
+    color: $text-table-df2ec6;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: normal;
+      margin-bottom: 1.5rem;
+    }
+    .code-show {
+      @include ct-flex(column, center, center, 0.5rem);
+      @include tablet {
+        @include ct-flex(row, center, center, 1rem);
+      }
+
+      input {
+        width: 100%;
+        max-width: 240px;
+        background-color: #6b6660;
+        color: white;
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        @include tablet {
+          font-size: 1.25rem;
+          padding: 0.5rem 0.75rem;
+        }
+
+        @include desktop {
+          font-size: 1.75rem;
+          padding: 0.25rem 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.user-info {
+  &--button {
+  }
+
+  &--detail {
+    display: none;
+    border: 2px solid #bc7c7e;
+    border-radius: 1rem;
+  }
+
+  .user-info-container {
+    border: 2px solid #ffe9c2;
+    border-radius: 1rem;
   }
 }

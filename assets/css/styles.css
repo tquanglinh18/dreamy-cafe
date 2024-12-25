@@ -1,3 +1,11 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 @keyframes blinker {
   from {
     filter: brightness(105%);
@@ -1108,15 +1116,22 @@ header {
   object-fit: contain;
 }
 
-#ct-modal-base {
+.ct-modal-base {
   background-color: rgba(204, 204, 204, 0.7);
 }
-#ct-modal-base .modal-dialog {
+.ct-modal-base .modal-dialog {
   width: 100%;
-  max-width: 768px;
+  max-width: 1200px;
   aspect-ratio: 1211/1020;
 }
-#ct-modal-base .modal-content {
+.ct-modal-base button {
+  border: none;
+  background-color: transparent;
+}
+.ct-modal-base button:hover {
+  animation: blinker 1s infinite ease, scaleInfiity 1s infinite ease;
+}
+.ct-modal-base .modal-content {
   width: 100%;
   height: 100%;
   min-height: 320px;
@@ -1127,91 +1142,329 @@ header {
   background-color: transparent;
   border: none;
 }
-#ct-modal-base button[aria-label=Close] {
+.ct-modal-base .modal-content button[aria-label=Close] {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/btn_close_modal.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   opacity: 1;
   top: 50%;
-  right: 4%;
+  right: 6%;
 }
-#ct-modal-base .modal-header {
+.ct-modal-base .modal-header {
   width: 100%;
   position: relative;
   padding: 0 1.5rem;
   border: none;
 }
-#ct-modal-base .modal-header .modal-title {
+.ct-modal-base .modal-header .modal-title {
   width: 33.33%;
   max-width: 362px;
   margin: 0 auto;
 }
-#ct-modal-base .modal-header .modal-title img {
+.ct-modal-base .modal-header .modal-title img {
   width: 100%;
   object-fit: contain;
 }
 @media (min-width: 1080px) {
-  #ct-modal-base .modal-header .modal-title {
+  .ct-modal-base .modal-header .modal-title {
     width: 40%;
   }
 }
-#ct-modal-base .modal-body {
+.ct-modal-base .modal-body {
   border: none;
   padding: 1rem 1.5rem;
+  height: 100%;
+  overflow: auto;
 }
 @media (min-width: 768px) {
-  #ct-modal-base .modal-body {
+  .ct-modal-base .modal-body {
     padding: 1.5rem 2rem;
   }
 }
 @media (min-width: 1080px) {
-  #ct-modal-base .modal-body {
-    padding: 2rem 2.5rem;
+  .ct-modal-base .modal-body {
+    padding: 2rem 4rem;
   }
 }
-#ct-modal-base .modal-footer {
+.ct-modal-base .modal-footer {
   border: none;
   padding: 1rem 1.5rem;
 }
 @media (min-width: 768px) {
-  #ct-modal-base .modal-footer {
+  .ct-modal-base .modal-footer {
     padding: 1.5rem 2rem;
   }
 }
 @media (min-width: 1080px) {
-  #ct-modal-base .modal-footer {
+  .ct-modal-base .modal-footer {
     padding: 2rem 2.5rem;
   }
 }
 
-.table-history table {
+table {
   width: 100%;
   align-content: center;
+  justify-items: center;
   text-align: center;
   color: #df2ec6;
+  font-size: 1rem;
 }
-.table-history table thead {
+@media (min-width: 768px) {
+  table {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1080px) {
+  table {
+    font-size: 2rem;
+  }
+}
+table thead {
   width: 100%;
   font-weight: bold;
   background-color: #dcd8d3;
 }
-.table-history table thead th {
+table thead th {
   padding: 0.5rem;
+  font-size: bold;
+  font-size: 1rem;
 }
-.table-history table thead th:first-child {
+@media (min-width: 768px) {
+  table thead th {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1080px) {
+  table thead th {
+    font-size: 2.25rem;
+  }
+}
+table thead th:first-child {
   border-radius: 0.5rem 0 0 0.5rem;
 }
-.table-history table thead th:last-child {
+table thead th:last-child {
   border-radius: 0 0.5rem 0.5rem 0;
 }
-.table-history table tbody tr {
+table tbody tr {
   background: url("../images/img_line_border_table.png") no-repeat bottom;
   background-size: 100% auto;
 }
-.table-history table tbody tr td {
-  padding: 0.5rem;
+table tbody tr td {
+  padding: 0.75rem 0.5rem;
+}
+
+.table-history table thead th:first-child {
+  width: 10%;
+}
+.table-history table thead th:nth-child(2) {
+  width: 40%;
+}
+.table-history table thead th:nth-child(3) {
+  width: 20%;
+}
+.table-history table thead th:last-child {
+  width: 30%;
+}
+.table-history table tbody tr td:first-child {
+  width: 10%;
+}
+.table-history table tbody tr td:nth-child(2) {
+  width: 40%;
+}
+.table-history table tbody tr td:nth-child(3) {
+  width: 20%;
+}
+.table-history table tbody tr td:last-child {
+  width: 30%;
+}
+.table-history table tbody tr td:last-child img {
+  width: 100%;
+  max-width: 72px;
+  min-width: 64px;
+  object-fit: contain;
+}
+@media (min-width: 768px) {
+  .table-history table tbody tr td:last-child img {
+    max-width: 96px;
+  }
+}
+@media (min-width: 1080px) {
+  .table-history table tbody tr td:last-child img {
+    max-width: 120px;
+  }
+}
+.table-history table tbody tr td:last-child input {
+  width: 100%;
+  max-width: 152px;
+  background-color: #6b6660;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+@media (min-width: 768px) {
+  .table-history table tbody tr td:last-child input {
+    font-size: 1.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+@media (min-width: 1080px) {
+  .table-history table tbody tr td:last-child input {
+    font-size: 1.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.table-misson table thead th {
+  width: 60%;
+}
+.table-misson table thead th:first-child {
+  width: 15%;
+}
+.table-misson table thead th:last-child {
+  width: 25%;
+}
+.table-misson table tbody tr {
+  width: 60%;
+}
+.table-misson table tbody tr:first-child {
+  width: 15%;
+}
+.table-misson table tbody tr:last-child {
+  width: 25%;
+}
+.table-misson table tbody tr td:last-child img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.guide-content {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+.guide-content p {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+.guide-content h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: bold;
+}
+.guide-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 600;
+}
+.guide-content h5 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.guide-content ul {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+.guide-content ul li {
+  text-indent: 0.5rem;
+}
+.guide-content .text-highlight {
+  color: #ff3c00;
+}
+
+.td-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+@media (min-width: 768px) {
+  .td-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+#modal-message .modal-dialog {
+  max-width: 840px;
+}
+#modal-message .modal-content {
+  height: fit-content;
+}
+#modal-message .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: #df2ec6;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: bold;
+}
+#modal-message .modal-body h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+#modal-message .modal-body .code-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  #modal-message .modal-body .code-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+#modal-message .modal-body .code-show input {
+  width: 100%;
+  max-width: 240px;
+  background-color: #6b6660;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+@media (min-width: 768px) {
+  #modal-message .modal-body .code-show input {
+    font-size: 1.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+@media (min-width: 1080px) {
+  #modal-message .modal-body .code-show input {
+    font-size: 1.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.user-info--detail {
+  display: none;
+  border: 2px solid #bc7c7e;
+  border-radius: 1rem;
+}
+.user-info .user-info-container {
+  border: 2px solid #ffe9c2;
+  border-radius: 1rem;
 }
