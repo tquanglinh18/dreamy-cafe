@@ -41,8 +41,6 @@ header {
     $pink-header-ef797c,
     $pink-header-f5c7c7
   );
-  border-bottom-right-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
   &__left {
     width: fit-content;
     @include ct-flex(row, center, center, 1rem);
@@ -297,12 +295,9 @@ header {
         aspect-ratio: 1/1;
         object-fit: contain;
         transition: all 0.3s ease;
+        @include blinker-animation();
       }
-      &:hover {
-        img {
-          @include blinker-animation();
-        }
-      }
+
     }
   }
 
@@ -1341,17 +1336,132 @@ table {
 }
 
 .user-info {
+  width: 100%;
+  &:hover {
+    .user-info--detail {
+      display: block;
+    }
+  }
   &--button {
+    @include ct-flex(row, end, center, 0.5rem);
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      max-width: 84px;
+      aspect-ratio: unset;
+      transition: all 0.3s ease;
+      @include tablet {
+        max-width: 96px;
+      }
+
+      @include desktop {
+        max-width: 124px;
+      }
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &--detail {
+    width: 50%;
+    max-width: fit-content;
     display: none;
-    border: 2px solid #bc7c7e;
+    border: 4px solid #bc7c7e;
     border-radius: 1rem;
+    position: absolute;
+    right: 1%;
+    background: linear-gradient(to bottom, #ef797c, #f5c7c7);
   }
 
   .user-info-container {
-    border: 2px solid #ffe9c2;
+    width: 100%;
+    border: 4px solid #ffe9c2;
     border-radius: 1rem;
+    padding: 0.5rem;
+    @include ct-flex(column, center, center, 0.5rem);
   }
+
+  .user-overview {
+    width: 100%;
+    @include ct-flex(row, start, center, 1rem);
+    &--avt {
+      img {
+        width: 100%;
+        max-width: 48px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+    }
+    &--name {
+      color: white;
+      font-weight: bold;
+    }
+
+    &--id {
+      color: white;
+    }
+  }
+
+  .user-go {
+    width: 100%;
+    @include ct-flex(row, space-between, center, 1rem);
+
+    .flex-contianer {
+      width: 100%;
+      @include ct-flex(row, start, center, 0.5rem);
+      color: white;
+      font-weight: bold;
+      font-size: 1.25rem;
+      img {
+        width: 24px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+    }
+
+    .btn-change-go {
+      cursor: pointer;
+      img {
+        width: 36px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          @include blinker-animation();
+        }
+      }
+    }
+  }
+
+  .lst-user-action {
+    @include ct-flex(column, center, center, 0.25rem);
+
+    .user-action {
+      width: 100%;
+      cursor: pointer;
+      img {
+        width: 100%;
+        aspect-ratio: unset;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          @include blinker-animation();
+        }
+      }
+    }
+  }
+}
+
+.not-logged-in {
+  width: 100%;
+  @include ct-flex(row, end, center, 1rem);
 }

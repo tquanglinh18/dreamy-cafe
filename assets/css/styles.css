@@ -73,8 +73,6 @@ header {
   align-items: stretch;
   gap: 1rem;
   background: linear-gradient(to bottom, #ef797c, #f5c7c7);
-  border-bottom-right-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
 }
 @media (min-width: 1080px) {
   .header {
@@ -366,8 +364,6 @@ header {
   aspect-ratio: 1/1;
   object-fit: contain;
   transition: all 0.3s ease;
-}
-.section__header .btn-play-introduction:hover img {
   animation: blinker 0.3s infinite ease;
   transform: scale(1.05);
 }
@@ -1459,12 +1455,144 @@ table tbody tr td {
   }
 }
 
+.user-info {
+  width: 100%;
+}
+.user-info:hover .user-info--detail {
+  display: block;
+}
+.user-info--button {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.user-info--button img {
+  width: 100%;
+  max-width: 84px;
+  aspect-ratio: unset;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .user-info--button img {
+    max-width: 96px;
+  }
+}
+@media (min-width: 1080px) {
+  .user-info--button img {
+    max-width: 124px;
+  }
+}
+.user-info--button:hover img {
+  transform: scale(1.1);
+}
 .user-info--detail {
+  width: 50%;
+  max-width: fit-content;
   display: none;
-  border: 2px solid #bc7c7e;
+  border: 4px solid #bc7c7e;
   border-radius: 1rem;
+  position: absolute;
+  right: 1%;
+  background: linear-gradient(to bottom, #ef797c, #f5c7c7);
 }
 .user-info .user-info-container {
-  border: 2px solid #ffe9c2;
+  width: 100%;
+  border: 4px solid #ffe9c2;
   border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user-info .user-overview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+.user-info .user-overview--avt img {
+  width: 100%;
+  max-width: 48px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.user-info .user-overview--name {
+  color: white;
+  font-weight: bold;
+}
+.user-info .user-overview--id {
+  color: white;
+}
+.user-info .user-go {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.user-info .user-go .flex-contianer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.user-info .user-go .flex-contianer img {
+  width: 24px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.user-info .user-go .btn-change-go {
+  cursor: pointer;
+}
+.user-info .user-go .btn-change-go img {
+  width: 36px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+.user-info .user-go .btn-change-go:hover img {
+  animation: blinker 0.3s infinite ease;
+  transform: scale(1.05);
+}
+.user-info .lst-user-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+.user-info .lst-user-action .user-action {
+  width: 100%;
+  cursor: pointer;
+}
+.user-info .lst-user-action .user-action img {
+  width: 100%;
+  aspect-ratio: unset;
+  transition: all 0.3s ease;
+}
+.user-info .lst-user-action .user-action:hover img {
+  animation: blinker 0.3s infinite ease;
+  transform: scale(1.05);
+}
+
+.not-logged-in {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
 }
