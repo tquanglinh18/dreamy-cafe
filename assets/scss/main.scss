@@ -644,35 +644,149 @@ header {
 
 #staff-game {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-
+  margin-bottom: 4rem;
   .carousel {
-    @include ct-flex(row, center, center, 1rem);
+    width: 100%;
+    position: relative;
+    @include ct-flex(row, space-evenly, center, 0rem);
+  }
+  .staff-slide {
+    width: 100%;
+    position: relative;
+
+    &--front {
+      width: 100%;
+      @include ct-flex(row, space-evenly, center, 1rem);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &--back {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1226/359;
+      img {
+        width: 100%;
+        aspect-ratio: 1226/359;
+      }
+    }
   }
 
   .carousel-indicators {
+    width: 50%;
     position: relative;
-    background-color: #6b5b16;
+    inset: 0;
     margin: 0;
+    z-index: 0;
+    li {
+      width: 100%;
+      height: 100%;
+      text-indent: 0;
+      display: none;
+      background-color: transparent;
+      &.active {
+        @include ct-flex(column, start, center, 1rem);
+      }
+    }
   }
 
-  .carousel-item {
-    .staff-infor {
-      @include ct-flex(column, start, center, 1rem);
-      color: $text-FD456F;
+  .carousel-inner {
+    width: 40%;
+    max-width: 500px;
+    .carousel-item {
+      width: 100%;
+      transition: none;
     }
   }
 
   .carousel-control-prev,
   .carousel-control-next {
     position: relative;
+    width: 72px;
+    height: 72px;
+    opacity: 1;
+    aspect-ratio: 1/1;
+    top: 50%;
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
   }
 
-  .carousel-control-prev,
+  .carousel-control-prev {
+    background: url("../images/ic_arrow_next.png") no-repeat center 100%/100%;
+    transform: rotate(180deg) translateX(-50%);
+  }
+
   .carousel-control-next {
-    background-color: #922a92;
-    width: 32px;
-    right: 32px;
+    background: url("../images/ic_arrow_next.png") no-repeat center 100%/100%;
+    transform: translateX(-50%);
+  }
+
+  .staff-overview {
+    width: 100%;
+    height: 100%;
+    @include ct-flex(column, center, center, 0);
+    position: relative;
+    transform: translateY(10%);
+    padding: 10% 1rem;
+
+    &--avt {
+      width: 100%;
+      height: 100%;
+      max-width: 463px;
+      position: relative;
+      background: url("../images/frame_staff_avt.png") no-repeat center 100%/100%;
+      @include ct-flex();
+      padding-bottom: 15%;
+      transform: translateY(10%);
+      img {
+        width: 75%;
+        max-width: 279px;
+      }
+    }
+
+    &--name {
+      width: 70%;
+      margin: 0 auto;
+      max-width: 360px;
+      aspect-ratio: 11/3;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      z-index: 1;
+      @include ct-flex();
+      text-shadow: 2px 0 #fd456f, -2px 0 #fd456f, 0 2px #fd456f, 0 -2px #fd456f,
+        1px 1px #fd456f, -1px -1px #fd456f, 1px -1px #fd456f, -1px 1px #fd456f;
+      background: url("../images/frame_staff_name.png") no-repeat center;
+      background-size: contain;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+
+      @include desktop {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .staff-desc {
+    width: 100%;
+    p {
+      color: $text-FD456F;
+      font-size: 1.5rem;
+      @include tablet {
+        font-size: 2rem;
+      }
+      @include desktop {
+        font-size: 2.75rem;
+      }
+    }
   }
 }
