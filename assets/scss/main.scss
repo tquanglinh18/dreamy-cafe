@@ -525,12 +525,14 @@ header {
 
   .tab-content {
     width: 100%;
+    padding: 1rem;
     background: url("../images/frame_featured_news_border.png") no-repeat top;
     background-size: 100% 100%;
+    margin-bottom: 1.5rem;
     @include ct-flex(row, center, center, 1rem);
 
     .tab-pane {
-      @include ct-flex(row, center, center, 1rem);
+      @include ct-flex(row, space-between, center, 1rem);
 
       .content-slide {
         width: 100%;
@@ -538,6 +540,139 @@ header {
           width: 50%;
         }
       }
+
+      .content-title {
+        width: 100%;
+        @include tablet {
+          width: 45%;
+        }
+        @include ct-flex(column, center, center, 1rem);
+      }
     }
+  }
+
+  .nav-tabs {
+    border: none;
+  }
+  .carousel-inner {
+    width: 100%;
+    background: url("../images/frame_news_feed.png") no-repeat center;
+    background-size: 100% 100%;
+    padding: 2rem 3rem 2.25rem 3rem;
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: none;
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    position: relative;
+    margin-bottom: 0;
+
+    li {
+      width: 24px;
+      height: 24px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 100%;
+      background: url("../images/img_dot.png") no-repeat center 100%/100%;
+
+      &.active {
+        background: url("../images/img_dot_active.png") no-repeat center 100%/100%;
+      }
+    }
+  }
+
+  .lst-content-card {
+    width: 100%;
+    @include ct-flex(column, center, center, 1rem);
+
+    .content-card {
+      width: 100%;
+      position: relative;
+      @include ct-flex(row, start, center, 1rem);
+      color: $text-FD456F;
+      background-color: $white;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+
+      &--type {
+        background-color: $text-FD456F;
+        padding: 0 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        color: $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -20%);
+      }
+
+      &--title {
+        flex: 1;
+        padding-left: 2rem;
+      }
+
+      &--date-post {
+      }
+    }
+  }
+}
+
+.lst-user-actione {
+  width: 100%;
+  @include ct-flex(row, space-evenly, center, 1rem);
+  margin-bottom: 2rem;
+
+  .user-action--item {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#staff-game {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .carousel {
+    @include ct-flex(row, center, center, 1rem);
+  }
+
+  .carousel-indicators {
+    position: relative;
+    background-color: #6b5b16;
+    margin: 0;
+  }
+
+  .carousel-item {
+    .staff-infor {
+      @include ct-flex(column, start, center, 1rem);
+      color: $text-FD456F;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: relative;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #922a92;
+    width: 32px;
+    right: 32px;
   }
 }
