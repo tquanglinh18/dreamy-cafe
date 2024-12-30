@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap-4.6.2/bootstrap.min.css" />
+
+    <style>
+        body{
+            color: black
+        }
+        .carousel-3d-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            perspective: 1000px;
+            /* Hiệu ứng phối cảnh 3D */
+        }
+
+        .carousel-3d {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            /* Bảo toàn hiệu ứng 3D */
+            transition: transform 1s ease;
+            /* Hiệu ứng chuyển động mượt */
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            background: #ffcc00;
+            color: #333;
+            text-align: center;
+            border-radius: 10px;
+            transform-origin: center center -250px;
+            /* Khoảng cách giữa các item */
+            backface-visibility: hidden;
+            /* Ẩn mặt sau khi xoay */
+            font-weight: bold;
+        }
+
+        /* Nút điều hướng */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-button.prev {
+            left: 10px;
+        }
+
+        .nav-button.next {
+            right: 10px;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-3d-container">
+        <button class="nav-button prev">◀</button>
+        <div class="carousel-3d">
+            <div class="carousel-item" data-index="0">Item 1</div>
+            <div class="carousel-item" data-index="1">Item 2</div>
+            <div class="carousel-item" data-index="2">Item 3</div>
+            <div class="carousel-item" data-index="3">Item 4</div>
+        </div>
+        <button class="nav-button next">▶</button>
+    </div>
+
+
+</body>
+<script>
+    const carousel = document.querySelector('.carousel-3d');
+    const items = document.querySelectorAll('.carousel-item');
+    const itemCount = items.length;
+    let angle = 0; // Góc hiện tại
+    const angleIncrement = 360 / itemCount; // Góc giữa các item
+
+    // Cập nhật carousel theo góc
+    function updateCarousel() {
+        carousel.style.transform = `rotateY(${angle}deg)`;
+        items.forEach((item, index) => {
+            const rotation = angleIncrement * index - angle;
+            const zIndex = Math.cos((rotation * Math.PI) / 180) > 0 ? 1 : -1;
+            item.style.zIndex = zIndex; // Điều chỉnh z-index để tạo hiệu ứng nổi
+        });
+    }
+
+    // Nút Next
+    document.querySelector('.nav-button.next').addEventListener('click', () => {
+        angle -= angleIncrement;
+        updateCarousel();
+    });
+
+    // Nút Previous
+    document.querySelector('.nav-button.prev').addEventListener('click', () => {
+        angle += angleIncrement;
+        updateCarousel();
+    });
+
+    // Khởi tạo carousel
+    updateCarousel();
+
+</script>
+<script src="./assets/js/jquery-3.7.1.min.js"></script>
+<script src="./assets/js/bootstrap-4.6.2/bootstrap.bundle.min.js"></script>
+
+</html>
