@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dreamy Cafe</title>
   <link rel="stylesheet" href="./assets/css/bootstrap-4.6.2/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/slick-1.8.1/slick.css" />
   <link rel="stylesheet" href="./assets/css/main.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/styles.css" />
@@ -303,7 +304,6 @@
     </div>
 
     <div id="staff-game">
-
       <div class="section">
         <div class="section__header">
           <img src="./assets/images/img_title_staff_game.png" alt="">
@@ -387,9 +387,8 @@
     <div id="pet-game">
       <div class="section">
         <div class="section__header">
-
+          <img src="./assets/images/img_title_pet.png" alt="">
         </div>
-
         <div class="section__body">
           <div id="lst-pet" class="carousel slide" data-ride="carousel">
             <div class="first-section-part">
@@ -398,51 +397,51 @@
 
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="staff-overview">
-                    <div class="staff-overview--avt">
+                  <div class="pet-overview">
+                    <div class="pet-overview--avt">
                       <img src="./assets/images/img_pet_tieu_thach.png" alt="">
                     </div>
-                    <div class="staff-overview--name">
+                    <div class="pet-overview--name">
                       Tiểu Thạch
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="staff-overview">
-                    <div class="staff-overview--avt">
+                  <div class="pet-overview">
+                    <div class="pet-overview--avt">
                       <img src="./assets/images/img_pet_oa_oa.png" alt="">
                     </div>
-                    <div class="staff-overview--name">
+                    <div class="pet-overview--name">
                       Oa Oa
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="staff-overview">
-                    <div class="staff-overview--avt">
+                  <div class="pet-overview">
+                    <div class="pet-overview--avt">
                       <img src="./assets/images/img_pet_ma_bu.png" alt="">
                     </div>
-                    <div class="staff-overview--name">
+                    <div class="pet-overview--name">
                       Ma Bư
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="staff-overview">
-                    <div class="staff-overview--avt">
+                  <div class="pet-overview">
+                    <div class="pet-overview--avt">
                       <img src="./assets/images/img_pet_be_mat.png" alt="">
                     </div>
-                    <div class="staff-overview--name">
+                    <div class="pet-overview--name">
                       Bé Mật
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="staff-overview">
-                    <div class="staff-overview--avt">
+                  <div class="pet-overview">
+                    <div class="pet-overview--avt">
                       <img src="./assets/images/img_pet_mieu-mieu.png" alt="">
                     </div>
-                    <div class="staff-overview--name">
+                    <div class="pet-overview--name">
                       Miêu Miêu
                     </div>
                   </div>
@@ -458,13 +457,168 @@
                 <img src="./assets/images/img_title_pet.png" alt="">
               </div>
               <ol class="carousel-indicators">
-                <li data-target="#lst-pet" data-slide-to="0" class="active">Tiểu thạch</li>
-                <li data-target="#lst-pet" data-slide-to="1">Oa Oa</li>
-                <li data-target="#lst-pet" data-slide-to="2">Ma Bư</li>
-                <li data-target="#lst-pet" data-slide-to="3">Bé Mật</li>
-                <li data-target="#lst-pet" data-slide-to="4">Miêu Miêu</li>
+                <li data-target="#lst-pet" data-slide-to="0" class="active">
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_1.png" alt="">
+                  </div>
+                  <p>
+                    - Tăng danh tiếng của cửa hàng lên 500/750/1000
+                  </p>
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_2.png" alt="">
+                  </div>
+                  <p>
+                    - Mỗi khi bạn tìm kiếm đồ vật trên đồng cỏ, sức mạnh thể chất của bạn sẽ là +2/3/5
+                  </p>
+                </li>
+                <li data-target="#lst-pet" data-slide-to="1">
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_1.png" alt="">
+                  </div>
+                  <p>
+                    - Thêm 500/750/1000 tiền vàng cửa hàng
+                  </p>
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_2.png" alt="">
+                  </div>
+                  <p>
+                    - Tìm kiếm các vật phẩm đã thu thập và nhận thêm vật liệu nâng cấp 3/5/8 (số lượng nằm trong phạm vi
+                    ngẫu nhiên)
+                  </p>
+                </li>
+                <li data-target="#lst-pet" data-slide-to="2">
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_1.png" alt="">
+                  </div>
+                  <p>
+                    - Bơ Jia Zhenpin 100/150/200
+                  </p>
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_2.png" alt="">
+                  </div>
+                  <p>
+                    - Có thể chịu được mọi tác động tiêu cực trong 1/2/3 cuộc phiêu lưu
+                  </p>
+                </li>
+                <li data-target="#lst-pet" data-slide-to="3">
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_1.png" alt="">
+                  </div>
+                  <p>
+                    - Thêm trải nghiệm của nhân viên 2500/3750/5000
+                  </p>
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_2.png" alt="">
+                  </div>
+                  <p>
+                    Mỗi khi bạn lục lọi những vật phẩm thu thập được dưới nước, thể lực của bạn sẽ là +2/3/5
+                  </p>
+                </li>
+                <li data-target="#lst-pet" data-slide-to="4">
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_1.png" alt="">
+                  </div>
+                  <p>
+                    - Thêm voucher nâng hạng 1/2/3
+                  </p>
+                  <div class="tag-skill">
+                    <img src="./assets/images/tag_skill_2.png" alt="">
+                  </div>
+                  <p>
+                    - Nhận thêm phần thưởng từ các sự kiện ngẫu nhiên: chẳng hạn như kinh nghiệm của nhân viên,
+                    4000/6000/8000
+                  </p>
+                </li>
               </ol>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="feedback">
+      <div class="section">
+        <div class="section__header">
+          <img src="./assets/images/img_title_feedback.png" alt="">
+        </div>
+
+        <div class="section__body">
+
+          <div class="slider multiple-items">
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+          </div>
+
+
+          <div id="feedback-carousel" class="carousel slide" data-ride="carousel">
+            <div class="flex-row-center">
+              <a class="carousel-control-prev" href="#feedback-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="user-feedback-desc">
+                    <h3>goood 1</h3>
+                    <p>Add captions to your slides easily with the .carousel-caption element within any .carousel-item.
+                      They can be easily hidden on smaller viewports, as shown below, with optional display utilities.
+                      We
+                      hide them initially with .d-none and bring them back on medium-sized devices with .d-md-block.</p>
+                  </div>
+                  <div class="user-feedback-info">
+                    <img src="./assets/images/img_duck_decor.png" alt="">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="user-feedback">
+                    <h3>goood 2</h3>
+                    <p>Add captions to your slides easily with the .carousel-caption element within any .carousel-item.
+                      They can be easily hidden on smaller viewports, as shown below, with optional display utilities.
+                      We
+                      hide them initially with .d-none and bring them back on medium-sized devices with .d-md-block.</p>
+                  </div>
+                  <div class="user-feedback-info">
+                    <img src="./assets/images/img_duck_decor.png" alt="">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="user-feedback">
+                    <h3>goood 3</h3>
+                    <p>Add captions to your slides easily with the .carousel-caption element within any .carousel-item.
+                      They can be easily hidden on smaller viewports, as shown below, with optional display utilities.
+                      We
+                      hide them initially with .d-none and bring them back on medium-sized devices with .d-md-block.</p>
+                  </div>
+                  <div class="user-feedback-info">
+                    <img src="./assets/images/img_duck_decor.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-next" href="#feedback-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <!-- <ol class="carousel-indicators">
+              <li data-target="#feedback-carousel" data-slide-to="0" class="active">
+                
+              </li>
+              <li data-target="#feedback-carousel" data-slide-to="1"></li>
+              <li data-target="#feedback-carousel" data-slide-to="2"></li>
+            </ol> -->
           </div>
         </div>
 
@@ -538,6 +692,7 @@
 
   <script src="./assets/js/jquery-3.7.1.min.js"></script>
   <script src="./assets/js/bootstrap-4.6.2/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/slick-1.8.1/slick.min.js"></script>
   <script src="./assets/js/main.js"></script>
 
 </body>
