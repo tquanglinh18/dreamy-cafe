@@ -522,7 +522,7 @@ header {
       width: 100%;
       position: relative;
       padding: 2rem 0rem;
-      background: url("../images/frame_future_mobile.png") no-repeat center;
+      background: url("../images/frame_feature_mobile.png") no-repeat center;
       background-size: 100% 100%;
 
       @include desktop {
@@ -579,10 +579,13 @@ header {
 
     .tab-pane {
       width: 100%;
-      @include ct-flex(column, center, center, 1rem);
+      .tab-pane-content {
+        width: 100%;
+        @include ct-flex(column, center, center, 1rem);
 
-      @include desktop {
-        @include ct-flex(row, space-between, center, 1rem);
+        @include desktop {
+          @include ct-flex(row, space-between, center, 1rem);
+        }
       }
 
       .content-slide {
@@ -721,13 +724,18 @@ header {
   }
 }
 
-.lst-user-actione {
+.lst-user-action {
   width: 100%;
   @include ct-grid(2, 4, 4, 4, 1rem);
   margin: 2rem 0 0 0;
   padding: 1rem;
 
   .user-action--item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      @include blinker-animation();
+    }
     img {
       width: 100%;
     }
@@ -1126,5 +1134,187 @@ header {
     .carousel-item {
       display: block;
     }
+  }
+}
+
+#feedback {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  .section {
+    &__header {
+      @include ct-flex(row, center, center);
+      margin-bottom: 1.5rem;
+      img {
+        width: 70%;
+      }
+    }
+    &__body {
+      position: relative;
+    }
+  }
+
+  .multiple-items {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+
+    .slick-list {
+      width: 100%;
+      @include desktop {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.user-feedback {
+  width: calc(100% / 3);
+  @include ct-flex(column, center, center, 1rem);
+  padding: 0.5rem 0.75rem;
+  &__desc {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 1rem;
+    @include ct-flex(row, center, center, 1rem);
+    &--text {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0.5rem 0.75rem 1rem 0.75rem;
+      @include tablet {
+        padding: 1rem 1rem 3rem 1rem;
+      }
+      h3 {
+        line-height: 1;
+        margin-bottom: 0;
+        @include tablet {
+          line-height: 1;
+          margin-bottom: 0.25rem;
+        }
+      }
+      p {
+        line-height: 1;
+        font-size: 1rem;
+        @include tablet {
+          line-height: 1.25;
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &__avt {
+    width: 100%;
+    margin: auto 0;
+    @include ct-flex(row, center, center, 1rem);
+    img {
+      width: 75%;
+      max-width: 224px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+}
+
+.prev-arrow {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    scale: 1.25;
+  }
+  @include desktop {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+    z-index: 1;
+  }
+}
+
+.next-arrow {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    scale: 1.25;
+  }
+  @include desktop {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+
+.slick-arrow-action {
+  @include ct-flex(row, space-around, center, 1rem);
+}
+
+.footer-decor {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.footer-content {
+  width: 100%;
+  padding: 2rem 1rem;
+  @include ct-flex(column, center, center, 1rem);
+  background-color: white;
+  border-top: 2px solid #ffeded;
+
+  .company-introduction {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    @include ct-flex(column, center, center, 0.5rem);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2%;
+    @include tablet {
+      font-size: 1.5rem;
+    }
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  .strategic-partner {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    @include ct-flex(row, space-between, center, 1rem);
+
+    .partner-item {
+      width: 100%;
+      img {
+        width: 100%;
+        max-width: 242px;
+        max-height: 74px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  transition: all 0.3s ease;
+  &:hover {
+    @include blinker-animation();
+    scale: 1.25;
   }
 }
