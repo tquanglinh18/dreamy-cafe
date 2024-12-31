@@ -215,13 +215,16 @@ header {
   position: fixed;
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
+  z-index: 998;
+  transition: all 0.3s ease;
 
   @include desktop {
     display: block;
   }
   .quick-action {
     position: relative;
+    transition: all 0.3s ease;
     &--frame {
     }
 
@@ -321,6 +324,16 @@ header {
           @include blinker-animation(0.5s);
         }
       }
+    }
+  }
+}
+
+.show-quick-action {
+  transition: all 0.3s ease;
+  translate: 85% 0%;
+  .quick-action--arrow {
+    img {
+      rotate: 180deg;
     }
   }
 }
@@ -562,7 +575,8 @@ header {
         font-size: 2rem;
       }
 
-      &.active {
+      &.active,
+      &:hover {
         background: url("../images/frame_tab_active.png") no-repeat center;
         background-size: 100% 100%;
         -webkit-text-stroke: 1px #6b5b16;
@@ -625,10 +639,18 @@ header {
           }
 
           .see-more-button {
+            cursor: pointer;
             width: 100%;
             max-width: 192px;
             img {
               width: 100%;
+              transition: all 0.3s ease;
+            }
+
+            &:hover {
+              img {
+                @include blinker-animation();
+              }
             }
           }
           @include desktop {
@@ -694,6 +716,7 @@ header {
       padding: 0.75rem;
       border-radius: 1rem;
       font-size: 1.5rem;
+      cursor: pointer;
 
       &--type {
         background-color: $text-FD456F;
@@ -1193,17 +1216,20 @@ header {
       }
       h3 {
         line-height: 1;
+        font-size: 1.5rem;
         margin-bottom: 0;
         @include tablet {
           line-height: 1;
+          font-size: 2.25rem;
           margin-bottom: 0.25rem;
         }
       }
       p {
+        font-size: 1.25rem;
         line-height: 1;
-        font-size: 1rem;
         @include tablet {
           line-height: 1.25;
+          font-size: 1.5rem;
         }
       }
     }

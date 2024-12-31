@@ -1,4 +1,12 @@
 $(function () {
+  AOS.init();
+  const $mobileHeader = $('#mobileHeader');
+
+  $('#menu-toggle').on('click', function () {
+    $mobileHeader.toggleClass('show');
+  });
+
+
   $('.multiple-items').slick({
     infinite: true,
     slidesToShow: 3,
@@ -16,6 +24,10 @@ $(function () {
       },
     ],
   });
+
+  $("#btn-show-more").click(() => {
+    $(".pined-quick-action").toggleClass("show-quick-action");
+  })
 });
 
 
