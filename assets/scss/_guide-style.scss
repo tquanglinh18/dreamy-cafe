@@ -36,3 +36,11 @@
     grid-template-columns: repeat($cols-xl, 1fr);
   }
 }
+
+@mixin max-lines($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

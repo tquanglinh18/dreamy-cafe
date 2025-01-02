@@ -4,11 +4,9 @@
 @use "_animation" as *;
 
 body {
-  background: url("../images/bg_fullpage_mobile.png") no-repeat center;
-  background-size: 100% 100%;
+  background: url("../images/bg_fullpage_mobile.png") repeat center/contain;
   @include desktop {
-    background: url("../images/bg_fullpage_pc.png") no-repeat center;
-    background-size: 100% 100%;
+    background: url("../images/bg_fullpage_pc.png") repeat center/contain;
   }
 }
 
@@ -36,7 +34,7 @@ header {
   @include ct-flex(row, space-between, center);
 
   @include desktop {
-    height: 120px;
+    height: 136px;
     padding: 0;
     @include ct-flex(row, start, center);
     background-color: $bg-header-color;
@@ -1348,27 +1346,20 @@ header {
 
 .news-page {
   width: 100%;
+  background: url("../images/bg_header_news_page.png") no-repeat top/ 100% auto,
+    url("../images/bg_fullpage_pc.png") repeat center/contain !important;
+  margin: 0 auto 8% auto;
   &__header {
-    width: 100%;
-    position: relative;
-    &--bg {
-      width: 100%;
-      img {
-        width: 100%;
-      }
+    width: 40%;
+    @include desktop {
+      padding: 4% 0;
     }
-    &--title {
-      width: 40%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @include ct-flex();
-
-      img {
-        width: 100%;
-        object-fit: contain;
-      }
+    margin: 0 auto;
+    position: relative;
+    padding: 6% 0;
+    img {
+      width: 100%;
+      object-fit: contain;
     }
   }
 
@@ -1376,14 +1367,18 @@ header {
     width: 100%;
     padding: 1rem;
 
-    .nav-tab-news {
+    .news-page-content {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       background: url("../images/frame_list_news.png") no-repeat center/100%
         100%;
-      padding: 1rem;
-      @include ct-flex(column, center, center, 1rem);
+      padding: 6%;
+      @include ct-flex(column, center, center, 0rem);
+
+      @include tablet {
+        padding: 4%;
+      }
       .nav {
         flex-wrap: nowrap;
         justify-content: center;
@@ -1397,8 +1392,8 @@ header {
         .nav-link {
           width: 100%;
           height: 100%;
-          min-width: 84px;
-          padding: 0.5rem 0.25rem;
+          min-width: 72px;
+          padding: 0.25rem;
           @include desktop {
             padding: 0.5rem 1rem;
             min-width: 228px;
@@ -1411,7 +1406,7 @@ header {
           text-transform: uppercase;
           font-family: "Cocon-Bold";
           -webkit-text-stroke: 1px #922a92;
-          font-size: 0.75rem;
+          font-size: 0.5rem;
           @include desktop {
             font-size: 2rem;
           }
@@ -1424,6 +1419,334 @@ header {
           }
         }
       }
+      .news-card {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid #fe8a9f;
+        @include ct-flex(row, space-between, stretch, 0rem);
+        @include tablet {
+          padding: 1.5rem 0;
+        }
+        &--thumb {
+          width: 25%;
+          img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+          }
+        }
+
+        &--content {
+          width: 50%;
+          @include ct-flex(column, space-between, start, 0.5rem);
+          h3 {
+            width: 100%;
+            font-size: 0.75rem;
+            line-height: 1;
+            color: $text-FD456F;
+            text-transform: uppercase;
+            @include tablet {
+              font-size: 1.5rem;
+            }
+
+            @include desktop {
+              font-size: 3.75rem;
+            }
+          }
+          span {
+            color: $text-ffa4b9;
+            font-size: 0.5rem;
+            @include tablet {
+              font-size: 1rem;
+            }
+            @include desktop {
+              font-size: 2.125rem;
+            }
+          }
+        }
+
+        &--action {
+          width: 20%;
+          @include ct-flex(row, center, center);
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .lst-news-card {
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        @include tablet {
+          margin-top: 1.5rem;
+        }
+      }
+      .page-navigation {
+        width: 100%;
+        @include ct-flex(row, center, center, 1rem);
+
+        .pagination {
+          gap: 0.5rem;
+          .page-item {
+            width: 32px;
+            border-radius: 100%;
+            color: $white;
+            background-color: #fe8299;
+            aspect-ratio: 1/1;
+            @include ct-flex(row, center, center);
+            text-align: center;
+
+            @include tablet {
+              width: 40px;
+            }
+
+            @include desktop {
+              width: 52px;
+            }
+
+            &.active {
+              background-color: #ff456f;
+            }
+          }
+
+          .page-link {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border: none;
+            background-color: transparent;
+            color: $white;
+            text-align: center;
+            padding: 0;
+            @include ct-flex(row, center, center);
+          }
+        }
+      }
     }
+  }
+}
+
+.tag-news {
+  width: 20%;
+  max-width: 389px;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  @include ct-flex(row, center, center, 1rem);
+  gap: 0.5rem;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include desktop {
+    width: 30%;
+    max-width: 569px;
+    transform: translateY(1rem);
+  }
+}
+
+.news-detail-page-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 8% auto;
+  padding: 0;
+
+  @include ct-flex(row, space-between, start, 1rem);
+  @include tablet {
+    padding: 3%;
+    background: url("../images/frame_list_news.png") no-repeat center/100% 100%;
+  }
+
+  .related-news {
+    display: none;
+    @include tablet {
+      width: 25%;
+      @include ct-flex(column, center, center, 1rem);
+    }
+
+    &__title {
+      width: 100%;
+      height: 54px;
+      font-size: 1.5rem;
+      color: $white;
+      background-color: #ec7c8e;
+      border-radius: 1.5rem;
+      padding: 0.25rem 0.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      @include ct-flex();
+      @include desktop {
+        font-size: 2.25rem;
+      }
+      h2 {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    &__lst {
+      width: 100%;
+      @include ct-flex(column, center, center, 1rem);
+      .related-news__item {
+        width: 100%;
+        background-color: $white;
+        border-radius: 1.5rem;
+        &--img {
+          width: 100%;
+          img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+          }
+        }
+        &--content {
+          width: 100%;
+          padding: 0.5rem 1rem;
+
+          h3 {
+            width: 100%;
+            font-size: 1.25rem;
+            line-height: 1 !important;
+            color: $text-FD456F;
+            @include max-lines();
+            @include desktop {
+              font-size: 2.25rem;
+            }
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+  .news-detail {
+    width: 100%;
+    @include ct-flex(column, center, center, 1rem);
+    @include tablet {
+      width: 70%;
+    }
+    .page-router {
+      width: 100%;
+      padding: 0.5rem 0;
+      font-size: 0.625rem;
+      line-height: 1;
+      @include ct-flex(row, start, center, 0.5rem);
+      border-bottom: 1px solid #282828;
+      @include tablet {
+        font-size: 2rem;
+      }
+
+      @include desktop {
+        font-size: 2.875rem;
+      }
+      .page-router__item {
+        @include ct-flex(row, center, center, 0.5rem);
+        img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: contain;
+        }
+
+        &::after {
+          content: ">";
+        }
+
+        &:last-child {
+          &::after {
+            content: "";
+          }
+        }
+      }
+    }
+
+    .news-title {
+      width: 100%;
+      text-align: center;
+      h3 {
+        width: 100%;
+        color: #906508;
+        font-weight: bold;
+        line-height: 1;
+        font-size: 20px;
+        @include desktop {
+          font-size: 2.5rem;
+        }
+        @include desktop {
+          font-size: 5rem;
+        }
+      }
+
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1;
+        @include tablet {
+          font-size: 2rem;
+        }
+        @include desktop {
+          font-size: 52px;
+        }
+      }
+    }
+
+    .news-content {
+      width: 100%;
+      font-size: 1rem;
+      @include tablet {
+        font-size: 2.25rem;
+      }
+
+      @include desktop {
+        font-size: 3.75rem;
+      }
+      line-height: 1;
+      p {
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        li {
+          text-indent: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#new-detail-page {
+  background: url("../image/img_line_footer.png") no-repeat bottom,
+    url("../images/bg_header_news_page.png") no-repeat top/ 100% auto;
+
+  .news-page__header {
+    visibility: hidden;
+  }
+}
+
+#news-page {
+  width: 100%;
+  background-color: #fff6e4;
+  background-image: none;
+  .footer-decor {
+    display: block;
+    margin-bottom: 0;
+    img {
+      width: 100%;
+      height: 24px;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .footer-content {
+    border-top: none;
+  }
+
+  @include desktop {
+    background: url("../images/bg_fullpage_pc.png") repeat center/contain;
   }
 }
