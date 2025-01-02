@@ -543,6 +543,7 @@ header {
       }
     }
   }
+
   .nav {
     flex-wrap: nowrap;
     justify-content: center;
@@ -1342,5 +1343,87 @@ header {
   &:hover {
     @include blinker-animation();
     scale: 1.25;
+  }
+}
+
+.news-page {
+  width: 100%;
+  &__header {
+    width: 100%;
+    position: relative;
+    &--bg {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    &--title {
+      width: 40%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include ct-flex();
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    padding: 1rem;
+
+    .nav-tab-news {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: url("../images/frame_list_news.png") no-repeat center/100%
+        100%;
+      padding: 1rem;
+      @include ct-flex(column, center, center, 1rem);
+      .nav {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: none;
+        @include desktop {
+          gap: 1.5rem;
+        }
+
+        .nav-link {
+          width: 100%;
+          height: 100%;
+          min-width: 84px;
+          padding: 0.5rem 0.25rem;
+          @include desktop {
+            padding: 0.5rem 1rem;
+            min-width: 228px;
+          }
+          aspect-ratio: 228/100;
+          border: none;
+          background: url("../images/frame_tab_normal.png") no-repeat center;
+          background-size: 100% 100%;
+          color: white;
+          text-transform: uppercase;
+          font-family: "Cocon-Bold";
+          -webkit-text-stroke: 1px #922a92;
+          font-size: 0.75rem;
+          @include desktop {
+            font-size: 2rem;
+          }
+
+          &.active,
+          &:hover {
+            background: url("../images/frame_tab_active.png") no-repeat center;
+            background-size: 100% 100%;
+            -webkit-text-stroke: 1px #6b5b16;
+          }
+        }
+      }
+    }
   }
 }
