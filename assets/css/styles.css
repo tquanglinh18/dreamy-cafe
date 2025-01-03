@@ -2073,3 +2073,68 @@ header {
     background: url("../images/bg_fullpage_pc.png") repeat center/contain;
   }
 }
+
+.noithat {
+  width: 100%;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.noithat__frame {
+  width: 100%;
+}
+.noithat__frame img {
+  width: 100%;
+  object-fit: contain;
+}
+.noithat__slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.noithat__slide .noithat-item--active {
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.noithat__slide .noithat-item--active img {
+  width: 90%;
+}
+.noithat__slide .noithat-item--prev {
+  width: 20%;
+  position: absolute;
+  top: 0%;
+  left: 60%;
+}
+.noithat__slide .noithat-item--prev img {
+  width: 60%;
+}
+.noithat__slide .noithat-item--next {
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+}
+.noithat__slide .noithat-item--next img {
+  width: 60%;
+}
+.noithat__slide .noithat-item--prev-1 {
+  width: 20%;
+  position: absolute;
+  top: 75%;
+  left: 40%;
+}
+.noithat__slide .noithat-item--prev-1 img {
+  width: 60%;
+}
+.noithat__slide .noithat-item--next-1 {
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+}
+.noithat__slide .noithat-item--next-1 img {
+  width: 60%;
+}

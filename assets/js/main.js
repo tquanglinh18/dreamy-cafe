@@ -28,6 +28,21 @@ $(function () {
   $("#btn-show-more").click(() => {
     $(".pined-quick-action").toggleClass("show-quick-action");
   })
+
+  autoPlaySlide();
+
+  function autoPlaySlide() {
+    const lstSlide = document.querySelectorAll('.noithat-item');
+    console.log(typeof lstSlide);
+
+    const slideCurrentElm = document.querySelector('.noithat-item.noithat-item--active');
+    console.log(slideCurrentElm);
+
+    const idxCurrentSlide = lstSlide.index(slideCurrentElm);
+    console.log(idxCurrentSlide);
+  }
 });
+
+
 
 

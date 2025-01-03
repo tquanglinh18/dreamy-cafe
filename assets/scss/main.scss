@@ -1750,3 +1750,75 @@ header {
     background: url("../images/bg_fullpage_pc.png") repeat center/contain;
   }
 }
+
+.noithat {
+  width: 100%;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  &__frame {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    .noithat-item {
+      &--active {
+        width: 50%;
+        img {
+          width: 90%;
+        }
+        position: absolute;
+        top: 10%;
+        left: 10%;
+      }
+
+      &--prev {
+        width: 20%;
+        img {
+          width: 60%;
+        }
+        position: absolute;
+        top: 0%;
+        left: 60%;
+      }
+
+      &--next {
+        width: 20%;
+        img {
+          width: 60%;
+        }
+        position: absolute;
+        top: 30%;
+        left: 80%;
+      }
+
+      &--prev-1 {
+        width: 20%;
+        img {
+          width: 60%;
+        }
+        position: absolute;
+        top: 75%;
+        left: 40%;
+      }
+
+      &--next-1 {
+        width: 20%;
+        img {
+          width: 60%;
+        }
+        position: absolute;
+        top: 50%;
+        left: 60%;
+      }
+    }
+  }
+}
