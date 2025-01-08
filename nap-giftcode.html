@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,110 +14,254 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
+
 <body>
-    <header>
-        <div class="header">
-            <div class="header__logo">
-                <div class="header__logo--desk">
-                    <a href="./">
-                        <img src="./assets/images/logo_dreamy_cafe.png" alt="">
-                    </a>
-                </div>
-                <div class="header__logo--mobile">
-                    <a href="./">
-                        <img src="./assets/images/ic_logo_app.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="header__lst-action">
-                <div class="header__lst-action--desk">
-                    <a href="" class="action-item">
-                        <p>Trang chủ</p>
-                    </a>
-                    <a href="" class="action-item">
-                        <p>Tin tức</p>
-                    </a>
-                    <a href="" class="action-item">
-                        <p>Cửa hàng</p>
-                    </a>
-                    <div class="action-item">
-                        <p class="action-item--root">Cộng đồng</p>
-                        <div class="action-item--lst-sub">
-                            <a href="" class="sub-item">
-                                <div class="sub-item--icon">
-                                    <img src="./assets/images/ic_fb_smn.png" alt="">
+
+    <section>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lstBanking">
+            Danh sách ngân hàng
+        </button>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bankingInfor">
+            Thông tin chuyển khoản
+        </button>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showMessage">
+            Thông báo thành công
+        </button>
+
+        <!-- The Modal Danh sach ngan hang -->
+        <div class="modal ct-modal-payment" id="lstBanking">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content box-container-gradient">
+                    <div class="box-container-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <img src="./assets/images/btn_close_pop_up_header.png" alt="">
+                            </button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="lst-banking-grid">
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
                                 </div>
-                                <p>Fanpage</p>
-                            </a>
-                            <a href="" class="sub-item">
-                                <div class="sub-item--icon">
-                                    <img src="./assets/images/ic_ytb_smn.png" alt="">
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
                                 </div>
-                                <p>Youtube</p>
-                            </a>
-                            <a href="" class="sub-item">
-                                <div class="sub-item--icon">
-                                    <img src="./assets/images/ic_fp_smn.png" alt="">
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
                                 </div>
-                                <p>Group cộng đồng</p>
-                            </a>
-                            <a href="" class="sub-item">
-                                <div class="sub-item--icon">
-                                    <img src="./assets/images/ic_tiktok_smn.png" alt="">
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
                                 </div>
-                                <p>Tiktok</p>
-                            </a>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                                <div class="banking-item">
+                                    <img src="./assets/images/logo_dreamy_cafe.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+
                         </div>
                     </div>
-                    <a href="" class="action-item">
-                        <p>Hỗ trợ</p>
-                    </a>
-                </div>
-                <div class="header__lst-action--mobile">
-                    <div class="action-item--mobile">
-                        <img src="./assets/images/btn_download_mobile.png" alt="">
-                    </div>
-
-                    <div class="action-item--mobile">
-                        <img src="./assets/images/btn_nap_the_mobile.png" alt="">
-                    </div>
-
-                    <div class="action-item--mobile">
-                        <img src="./assets/images/btn_gift_code_mobile.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="header__btn-menu-mobile">
-                <div id="menu-toggle" class="">
-                    <img src="./assets/images/ic_btn_menu_mobile.png" alt="">
                 </div>
             </div>
         </div>
-    </header>
 
-    <!-- Mobile Header -->
-    <div class="mobile-header" id="mobileHeader">
-        <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Cửa hàng</a></li>
-            <li class="tab-with-submenu">
-                <div class="tab-parent">
-                    Cộng đồng
+        <!-- The Modal Thong tin Chuyen Khoan -->
+        <div class="modal ct-modal-payment" id="bankingInfor">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content box-container-gradient">
+
+                    <div class="box-container-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <img src="./assets/images/btn_close_pop_up_header.png" alt="">
+                            </button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="img-qr-code">
+                                <div class="bank-img">
+                                    <img src="https://img.abyssale.com/574bfa75-c880-46be-97ae-599473818958" alt="">
+                                </div>
+
+                                <h3>Ngân hàng TMCP Tiên Phong (TienPhongBank)</h3>
+                                <h3>
+                                    Chi nhanh: Hai Ba Trung
+                                </h3>
+                            </div>
+
+                            <div class="input-field">
+                                <p>Số tài khoản: <span>33545687979878975</span> </p>
+
+                                <button type="submit">
+                                    <img src="./assets/images/btn_copy.png" alt="">
+                                </button>
+                            </div>
+
+                            <div class="input-field">
+                                <p>Nội dung: <span>NAP ABC99</span> </p>
+
+                                <button type="submit">
+                                    <img src="./assets/images/btn_copy.png" alt="">
+                                </button>
+                            </div>
+
+                            <div class="text-message-copy">
+                                Copy thành công
+                            </div>
+
+                            <div class="total-cash">
+                                <p>Tổng tiền: </p>
+                                <p><span>5.000</span>VND</p>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <div class="box-action">
+                                <button type="submit" class="btn-img">
+                                    <img src="./assets/images/btn_save_qr_banking.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <ul class="tab-child">
-                    <li> <a href="">Fanpage</a>
-                    </li>
-                    <li><a href="">Youtube</a></li>
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Tik Tok</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Hỗ trợ</a></li>
-        </ul>
-    </div>
+            </div>
+        </div>
 
-    <section>
+        <!-- The Modal Thong báo thành công -->
+        <div class="modal ct-modal-payment" id="showMessage">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content box-container-gradient">
+
+                    <div class="box-container-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <img src="./assets/images/img_title_notify_pop_up.png" alt="">
+                            </div>
+                            <!-- <button type="button" class="close" data-dismiss="modal">
+                                <img src="./assets/images/btn_close_pop_up_header.png" alt="">
+                            </button> -->
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            hehehheheƒ
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="" data-dismiss="modal">
+                                <img src="./assets/images/btn_close.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <div class="slide-banner">
             <div id="pay-banner" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
@@ -137,21 +282,24 @@
                     </div>
                 </div>
 
+
                 <ol class="carousel-indicators">
                     <li data-target="#pay-banner" data-slide-to="0" class="active"></li>
                     <li data-target="#pay-banner" data-slide-to="1"></li>
                     <li data-target="#pay-banner" data-slide-to="2"></li>
                 </ol>
                 <!-- <a class="carousel-control-prev" href="#pay-banner" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#pay-banner" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#pay-banner" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+       </a> -->
             </div>
         </div>
+
+
 
 
         <div class="page-content">
@@ -190,7 +338,7 @@
                                     <div class="dropdown">
                                         <button class="input-dropdown-select" type="button" id="sel-account"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Chọn nhân vật
+                                            Nhân vật
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="sel-account">
                                             <div id="server-1" class="dropdown-item">S1 DreamyCafe1 - Meo Con</div>
@@ -201,16 +349,43 @@
                                 </div>
                             </div>
 
-                            <div class="box-not-logged-in">
+                            <!-- <div class="box-not-logged-in">
+                                <h3>1. Phương thức đăng nhập</h3>
+                                <div class="role-get-acocunt-id">
+                                    <a href="">Hướng dẫn tìm ID</a>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" name="" id="serial-code"
+                                        placeholder="Nhập Account ID nhân vật...">
+                                </div>
+                                <div class="box-action">
+                                    <button type="submit" class="btn-img mb-2">
+                                        <img src="./assets/images/btn_xacnhan.png" alt="">
+                                    </button>
+                                </div>
 
-                            </div>
+                                <p class="text-with-line">Hoặc đăng nhập với</p>
+                                <div class="box-action">
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_login_goplay.png" alt="">
+                                    </button>
+
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_login_google.png" alt="">
+                                    </button>
+
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_login_apple_id.png" alt="">
+                                    </button>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
+
 
                     <div class="box-container-gradient sel-pay-method">
                         <div class="box-container-content">
                             <h3>2. Chọn phương thức thanh toán</h3>
-
                             <div class="select-field-ouline">
                                 <div class="dropdown">
                                     <button class="input-dropdown-select" type="button" id="sel-services"
@@ -218,192 +393,237 @@
                                         Nạp thẻ game
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="sel-services">
-                                        <div id="services-1" class="dropdown-item">Nạp thẻ game</div>
-                                        <div id="services-2" class="dropdown-item">Thanh Toán CL Ngân Hàng</div>
-                                        <div id="services-3" class="dropdown-item">Ví điện tử</div>
+
+
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                <a class="dropdown-item nav-item nav-link active" id="nav-home-tab"
+                                                    data-toggle="tab" href="#nav-home" role="tab"
+                                                    aria-controls="nav-home" aria-selected="true">Nạp thẻ game</a>
+                                                <a class="dropdown-item nav-item nav-link" id="nav-profile-tab"
+                                                    data-toggle="tab" href="#nav-profile" role="tab"
+                                                    aria-controls="nav-profile" aria-selected="false">Thanh Toán CK Ngân
+                                                    Hàng</a>
+                                                <a class="dropdown-item nav-item nav-link" id="nav-contact-tab"
+                                                    data-toggle="tab" href="#nav-contact" role="tab"
+                                                    aria-controls="nav-contact" aria-selected="false">Ví điện tử</a>
+                                            </div>
+                                        </nav>
                                     </div>
                                 </div>
                             </div>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab">
+                                    <div id="recharge-game-card">
+                                        <div class="select-field-ouline">
+                                            <div class="dropdown">
+                                                <button class="input-dropdown-select" type="button" id="sel-card-type"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="card-type">
+                                                        <div class="card-type--img">
+                                                            <img src="./assets/images/img_vcoin_card.png" alt="">
+                                                        </div>
+                                                        <div class="card-type--name">
+                                                            The Vcoin
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="sel-card-type">
+                                                    <div id="vcoin-card" class="dropdown-item">
+                                                        <div class="card-type">
+                                                            <div class="card-type--img">
+                                                                <img src="./assets/images/img_vcoin_card.png" alt="">
+                                                            </div>
+                                                            <div class="card-type--name">
+                                                                Thẻ Vcoin
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="gate-card" class="dropdown-item">
+                                                        <div class="card-type">
+                                                            <div class="card-type--img">
+                                                                <img src="./assets/images/img_gate_card.png" alt="">
+                                                            </div>
+                                                            <div class="card-type--name">
+                                                                Thẻ GATE
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                            <div class="select-field-ouline">
-                                <div class="dropdown">
-                                    <button class="input-dropdown-select" type="button" id="sel-card-type"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <div class="card-type">
-                                            <div class="card-type--img">
-                                                <img src="./assets/images/img_vcoin_card.png" alt="">
-                                            </div>
-                                            <div class="card-type--name">
-                                                The Vcoin
+                                                </div>
                                             </div>
                                         </div>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="sel-card-type">
-                                        <div id="vcoin-card" class="dropdown-item">
-                                            <div class="card-type">
-                                                <div class="card-type--img">
-                                                    <img src="./assets/images/img_vcoin_card.png" alt="">
-                                                </div>
-                                                <div class="card-type--name">
-                                                    Thẻ Vcoin
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="gate-card" class="dropdown-item">
-                                            <div class="card-type">
-                                                <div class="card-type--img">
-                                                    <img src="./assets/images/img_gate_card.png" alt="">
-                                                </div>
-                                                <div class="card-type--name">
-                                                    Thẻ GATE
-                                                </div>
-                                            </div>
+
+                                        <div class="input-field">
+                                            <input type="text" name="" id="card-code" placeholder="Nhập mã thẻ...">
                                         </div>
 
-                                    </div>
-                                </div>
-                            </div>
+                                        <div class="input-field">
+                                            <input type="text" name="" id="serial-code"
+                                                placeholder="Nhập số seri thẻ...">
+                                        </div>
 
-                            <div class="input-field">
-                                <input type="text" name="" id="card-code" placeholder="Nhập mã thẻ...">
-                            </div>
+                                        <div class="re-captcha">
+                                        </div>
 
-                            <div class="input-field">
-                                <input type="text" name="" id="serial-code" placeholder="Nhập số seri thẻ...">
-                            </div>
-
-                            <div class="re-captcha">
-
-                            </div>
-
-                            <div class="box-action">
-                                <button type="submit" class="btn-img">
-                                    <img src="./assets/images/btn_thanhtoan.png" alt="">
-                                </button>
-                            </div>
-                            //CK ngan hang
-                            <div class="smart-banking">
-                                <div class="select-field-ouline">
-                                    <div class="dropdown">
-                                        <button class="input-dropdown-select" type="button" id="sel-coin"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div class="card-type">
-                                                <div class="card-type--img">
-                                                    <img src="./assets/images/ic_pearl.png" alt="">
-                                                </div>
-                                                <div class="card-type--name">
-                                                    5
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="sel-coin">
-                                            <div id="vcoin-card" class="dropdown-item">
-                                                <div class="card-type">
-                                                    <div class="card-type--img">
-                                                        <img src="./assets/images/ic_pearl.png" alt="">
-                                                    </div>
-                                                    <div class="card-type--name">
-                                                        5
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="gate-card" class="dropdown-item">
-                                                <div class="card-type">
-                                                    <div class="card-type--img">
-                                                        <img src="./assets/images/ic_pearl.png" alt="">
-                                                    </div>
-                                                    <div class="card-type--name">
-                                                        10
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                        <div class="box-action">
+                                            <button type="submit" class="btn-img">
+                                                <img src="./assets/images/btn_thanhtoan.png" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <p class="text-with-line"> Hoặc</p>
-
-                                <div class="input-field">
-                                    <input type="text" name="" id="coin-pay"
-                                        placeholder="Nhập số Trân Châu muốn nạp...">
-                                </div>
-
-                                <div class="total-cash">
-                                    <p>Tổng tiền: </p>
-                                    <p><span>5.000</span>VND</p>
-                                </div>
-                            </div>
-
-                            //Vi dien tu
-                            <div class="e-wallet">
-                                <div class="select-field-ouline">
-                                    <div class="dropdown">
-                                        <button class="input-dropdown-select" type="button" id="sel-coin"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div class="card-type">
-                                                <div class="card-type--img">
-                                                    <img src="./assets/images/ic_pearl.png" alt="">
-                                                </div>
-                                                <div class="card-type--name">
-                                                    5
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="sel-coin">
-                                            <div id="vcoin-card" class="dropdown-item">
-                                                <div class="card-type">
-                                                    <div class="card-type--img">
-                                                        <img src="./assets/images/ic_pearl.png" alt="">
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab">
+                                    <div class="smart-banking">
+                                        <div class="select-field-ouline">
+                                            <div class="dropdown">
+                                                <button class="input-dropdown-select" type="button" id="sel-coin"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="number-of-pearls">
+                                                        <div class="number-of-pearls--img">
+                                                            <img src="./assets/images/ic_pearl.png" alt="">
+                                                        </div>
+                                                        <div class="number-of-pearls--name">
+                                                            5
+                                                        </div>
                                                     </div>
-                                                    <div class="card-type--name">
-                                                        5
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="sel-coin">
+                                                    <div id="vcoin-card" class="dropdown-item">
+                                                        <div class="number-of-pearls">
+                                                            <div class="number-of-pearls--img">
+                                                                <img src="./assets/images/ic_pearl.png" alt="">
+                                                            </div>
+                                                            <div class="number-of-pearls--name">
+                                                                5
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div id="gate-card" class="dropdown-item">
-                                                <div class="card-type">
-                                                    <div class="card-type--img">
-                                                        <img src="./assets/images/ic_pearl.png" alt="">
+                                                    <div id="gate-card" class="dropdown-item">
+                                                        <div class="number-of-pearls">
+                                                            <div class="number-of-pearls--img">
+                                                                <img src="./assets/images/ic_pearl.png" alt="">
+                                                            </div>
+                                                            <div class="number-of-pearls--name">
+                                                                10
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="card-type--name">
-                                                        10
-                                                    </div>
+
+
                                                 </div>
                                             </div>
+                                        </div>
 
+
+                                        <p class="text-with-line"> Hoặc</p>
+
+
+                                        <div class="input-field">
+                                            <input type="number" name="" id="coin-pay"
+                                                placeholder="Nhập số Trân Châu muốn nạp...">
+                                        </div>
+
+
+                                        <div class="total-cash">
+                                            <p>Tổng tiền: </p>
+                                            <p><span>5.000</span>VND</p>
+                                        </div>
+
+
+                                        <div class="box-action">
+                                            <button type="submit" class="btn-img">
+                                                <img src="./assets/images/btn_thanhtoan.png" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab">
+                                    <div class="e-wallet">
+                                        <div class="select-field-ouline">
+                                            <div class="dropdown">
+                                                <button class="input-dropdown-select" type="button" id="sel-coin"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="number-of-pearls">
+                                                        <div class="number-of-pearls--img">
+                                                            <img src="./assets/images/ic_pearl.png" alt="">
+                                                        </div>
+                                                        <div class="number-of-pearls--name">
+                                                            5
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="sel-coin">
+                                                    <div id="vcoin-card" class="dropdown-item">
+                                                        <div class="number-of-pearls">
+                                                            <div class="number-of-pearls--img">
+                                                                <img src="./assets/images/ic_pearl.png" alt="">
+                                                            </div>
+                                                            <div class="number-of-pearls--name">
+                                                                15
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="gate-card" class="dropdown-item">
+                                                        <div class="number-of-pearls">
+                                                            <div class="number-of-pearls--img">
+                                                                <img src="./assets/images/ic_pearl.png" alt="">
+                                                            </div>
+                                                            <div class="number-of-pearls--name">
+                                                                10
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                <p class="text-with-line"> Hoặc</p>
 
-                                <div class="input-field">
-                                    <input type="text" name="" id="coin-pay"
-                                        placeholder="Nhập số Trân Châu muốn nạp...">
-                                </div>
-
-                                <div class="total-cash">
-                                    <p>Tổng tiền: </p>
-                                    <p><span>5.000</span>VND</p>
-                                </div>
-
-                                <div class="select-field-ouline">
-                                    <div class="dropdown">
-                                        <button class="input-dropdown-select" type="button" id="sel-e-wallet"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Momo
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="sel-e-wallet">
-                                            <div id="momo" class="dropdown-item">
-                                                Momo
+                                                </div>
                                             </div>
-                                            <div id="one-pay" class="dropdown-item">
-                                                OnePay
+                                        </div>
+
+
+                                        <p class="text-with-line"> Hoặc</p>
+
+
+                                        <div class="input-field">
+                                            <input type="text" name="" id="coin-pay"
+                                                placeholder="Nhập số Trân Châu muốn nạp...">
+                                        </div>
+
+
+                                        <div class="total-cash">
+                                            <p>Tổng tiền: </p>
+                                            <p><span>5.000</span>VND</p>
+                                        </div>
+
+
+                                        <div class="select-field-ouline">
+                                            <div class="dropdown">
+                                                <button class="input-dropdown-select" type="button" id="sel-e-wallet"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Momo
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="sel-e-wallet">
+                                                    <div id="momo" class="dropdown-item">
+                                                        Momo
+                                                    </div>
+                                                    <div id="one-pay" class="dropdown-item">
+                                                        OnePay
+                                                    </div>
+                                                    <div id="vtc-pay" class="dropdown-item">
+                                                        VTCPay
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div id="vtc-pay" class="dropdown-item">
-                                                VTCPay
-                                            </div>
+                                        </div>
+
+
+                                        <div class="box-action">
+                                            <button type="submit" class="btn-img">
+                                                <img src="./assets/images/btn_thanhtoan.png" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -412,113 +632,20 @@
                     </div>
                 </div>
 
+
                 <div class="tab-pane fade" id="giftcode" role="tabpanel" aria-labelledby="giftcode-tab">Giftcode
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div id="footer">
-            <div class="footer-decor">
-                <img src="./assets/images/img_decor_footer.png" alt="">
-            </div>
-
-            <div class="footer-content">
-                <div class="company-introduction">
-                    <p>Bản quyền thuộc công ty VTC Online, VTC Online phát hành tại Việt Nam
-                    </p>
-                    <p> Giấy phép phê duyệt nội dung kịch bản trò chơi G1 trên mạng
-                        số 78/QD-BTTT cấp ngày ../../2023</p>
-                    <p>Trung tâm hỗ trợ: hotro.goplay.vn- Hotline: 1900 636 876</p>
-                </div>
-
-                <div class="strategic-partner">
-                    <div class="partner-item">
-                        <img src="./assets/images/logo_12+.png" alt="">
-                    </div>
-                    <div class="partner-item">
-                        <img src="./assets/images/logo_vtconline.png" alt="">
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="./assets/images/logo_yiqihang.png" alt="">
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="./assets/images/img_logo_dreamy.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="pined-quick-action" class="pined-quick-action">
-        <div class="quick-action">
-            <div class="quick-action--frame">
-                <img src="./assets/images/frame_quick_action.png" alt="">
-            </div>
-            <div class="quick-action--content">
-                <div class="btn-recharge-card">
-                    <img src="./assets/images/btn_nap_the_quick_action.png" alt="">
-                </div>
-                <div class="qr-download">
-                    <div class="qr-download--frame">
-                        <img src="./assets/images/frame_QR_download.png" alt="">
-                    </div>
-                    <div class="qr-download--code">
-                        <img src="./assets/images/ic_logo_app.png" alt="">
-                    </div>
-                </div>
-
-                <div class="lst-download-method">
-                    <div class="download-method">
-                        <img src="./assets/images/btn_download_app_store.png" alt="">
-                    </div>
-
-                    <div class="download-method">
-                        <img src="./assets/images/btn_download_gg_play.png" alt="">
-                    </div>
-
-                    <div class="download-method">
-                        <img src="./assets/images/btn_download_apk.png" alt="">
-                    </div>
-                </div>
-
-                <div class="lst-social">
-                    <div class="social-method">
-                        <img src="./assets/images/ic_scroll_to_top.png" alt="">
-                    </div>
-
-                    <div class="social-method">
-                        <img src="./assets/images/ic_facebook.png" alt="">
-                    </div>
-
-                    <div class="social-method">
-                        <img src="./assets/images/ic_tiktok.png" alt="">
-                    </div>
-
-                    <div class="social-method">
-                        <img src="./assets/images/ic_fanpage.png" alt="">
-                    </div>
-
-                    <div class="social-method">
-                        <img src="./assets/images/ic_youtube.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div id="btn-show-more" class="quick-action--arrow">
-                <img src="./assets/images/ic_arrow_next.png" alt="">
-            </div>
-        </div>
-    </div>
 
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="./assets/js/bootstrap-4.6.2/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/slick-1.8.1/slick.min.js"></script>
     <script src="./assets/js/aos-2.3.1/aos.js"></script>
     <script src="./assets/js/main.js"></script>
+
 
 </body>
 

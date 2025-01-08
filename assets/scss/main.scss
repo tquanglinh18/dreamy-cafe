@@ -1759,6 +1759,8 @@ header {
   border-radius: 1rem;
   background: linear-gradient(to top, #f0d0b3, #dd8a8d);
   &::before {
+    width: 100%;
+    height: 100%;
     content: "";
     border: 4px solid #ffe9c2;
     position: absolute;
@@ -1769,7 +1771,16 @@ header {
   .box-container-content {
     width: 100%;
     position: relative;
-    z-index: 1;
+    // z-index: 1;
+  }
+
+  h3 {
+    width: 100%;
+    text-align: start;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 2rem;
   }
 }
 
@@ -1817,7 +1828,10 @@ header {
   .nav {
     width: 95%;
     margin: 0 auto;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    border-bottom: none;
+
     .nav-item {
       width: 48%;
       .nav-link {
@@ -1853,28 +1867,44 @@ header {
     @include ct-flex(row, start, center, 0.5rem);
     margin-bottom: 0.5rem;
     border-radius: 15px;
+    font-size: 1.5rem;
     p {
       width: 100%;
     }
   }
 
   .total-pearl {
+    gap: 1.5rem;
     &::before {
-      width: 46px;
-      height: 46px;
+      width: 24px;
+      height: 24px;
       aspect-ratio: 1/1;
       content: "";
       background: url("../images/ic_pearl.png") no-repeat center/contain;
+      @include tablet {
+        max-width: 32px;
+      }
+      @include desktop {
+        width: 42px;
+        height: 42px;
+      }
     }
   }
 }
 
 .button-absolute {
   width: 100%;
-  max-width: 64px;
+  max-width: 36px;
   position: relative;
   border: none;
   background-color: transparent;
+  @include tablet {
+    max-width: 48px;
+  }
+
+  @include desktop {
+    max-width: 64px;
+  }
   &--frame {
     width: 100%;
     img {
@@ -1906,6 +1936,7 @@ header {
     border-radius: 15px;
     border: none;
     margin-bottom: 0rem;
+    font-size: 1.5rem;
     &::after {
       content: "";
       width: 32px;
@@ -1926,7 +1957,7 @@ header {
     .dropdown-item {
       width: 100%;
       border: none;
-      border-radius: 1rem;
+      border-radius: 0.5rem;
       background-color: #98464c;
       color: white;
       margin-bottom: 0.25rem;
@@ -1939,40 +1970,29 @@ header {
   }
 }
 
-.sel-pay-method {
+.input-field {
   width: 100%;
-  h3 {
+  padding: 0.5rem 1rem;
+  min-height: 72px;
+  border: 3px solid #a15e87;
+  background-color: white;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  @include ct-flex();
+  font-size: 1.5rem;
+  input {
     width: 100%;
-    text-align: start;
-    color: white;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-size: 2rem;
+    color: black;
+    border: none;
+    background-color: transparent;
   }
 
-  .input-field {
-    width: 100%;
-    padding: 1rem;
-    min-height: 72px;
-    border: 3px solid #a15e87;
-    background-color: white;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    @include ct-flex();
-    input {
-      width: 100%;
-      color: black;
+  input {
+    &:focus,
+    &:active,
+    &:target {
       border: none;
-      background-color: transparent;
-    }
-
-    input {
-      &:focus,
-      &:active,
-      &:target {
-        border: none;
-        outline: none;
-      }
+      outline: none;
     }
   }
 }
@@ -1994,6 +2014,7 @@ header {
     color: white;
     position: relative;
     min-height: 72px;
+    font-size: 1.5rem;
     &::after {
       content: "";
       width: 32px;
@@ -2009,12 +2030,20 @@ header {
     }
   }
 
+  .nav {
+    width: 100%;
+    gap: 0;
+    flex-direction: column;
+  }
+
   .dropdown-menu {
     width: 100%;
     background-color: #ce5f62;
     border: 2px solid white;
     padding: 0.5rem;
     border-radius: 1rem;
+    position: relative;
+    z-index: 1999;
 
     .dropdown-item {
       width: 100%;
@@ -2045,9 +2074,22 @@ header {
   }
 }
 
+.number-of-pearls {
+  width: 100%;
+  @include ct-flex(row, start, center, 1rem);
+  &--img {
+    min-width: 36px;
+    @include ct-flex();
+    img {
+      height: 36px;
+      object-fit: contain;
+    }
+  }
+}
+
 .box-action {
   width: 100%;
-  @include ct-flex();
+  @include ct-flex(column, center, center, 0.5rem);
   .btn-img {
     width: 100%;
     border: none;
@@ -2055,5 +2097,178 @@ header {
     img {
       width: 100%;
     }
+  }
+}
+
+.text-with-line {
+  width: 100%;
+  @include ct-flex();
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  &::before,
+  &::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #f1d0d1;
+  }
+}
+
+.box-not-logged-in {
+  h3 {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+  .role-get-acocunt-id {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 1.25rem;
+    a {
+      font-size: 1.5rem;
+      text-decoration: underline;
+    }
+  }
+}
+
+.total-cash {
+  width: 100%;
+  @include ct-flex(row, space-between, center, 0.5rem);
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.ct-modal-payment {
+  padding: 1rem;
+
+  .modal-dialog {
+    width: fit-content;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 90vh;
+    .modal-content {
+      width: 100%;
+      margin: 0 auto;
+      border: none;
+      background-color: transparent;
+      .modal-header {
+        border-bottom: none;
+        padding: 0rem;
+        margin-bottom: 1rem;
+        @include ct-flex();
+        button[class="close"] {
+          width: 72px;
+          padding: 1rem;
+          opacity: 1;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .modal-body {
+        width: 100%;
+        padding: 0rem;
+        min-width: 0;
+        min-height: 15vh;
+        max-height: 70vh;
+        padding: 0.5rem;
+        @include ct-flex(column, start, center, 0.5rem);
+        overflow: auto;
+        @include tablet {
+          min-width: 480px;
+        }
+        .img-qr-code {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 1rem;
+          .bank-img {
+            width: 100%;
+            max-width: 395px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            background-color: white;
+            margin-bottom: 1rem;
+            img {
+              width: 100%;
+              aspect-ratio: 1/1;
+              object-fit: contain;
+            }
+          }
+          h3 {
+            text-align: center;
+            margin-bottom: 0;
+          }
+        }
+
+        .input-field {
+          padding: 0;
+          justify-content: space-between;
+          p {
+            padding: 0 1rem;
+          }
+          button {
+            border: none;
+            background-color: transparent;
+          }
+        }
+
+        .text-message-copy {
+          width: 100%;
+          text-align: center;
+          color: #0eb81e;
+          font-family: "Linotte-Bold";
+          -webkit-text-stroke: 1.5px white;
+          font-size: 1.5rem;
+        }
+
+        .total-cash {
+          width: 100%;
+          background-color: #ba686c;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 1rem;
+        }
+      }
+      .modal-footer {
+        border-top: none;
+        padding: 0rem;
+        @include ct-flex();
+        .box-action {
+          button {
+            max-width: 330px;
+          }
+        }
+        button {
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.lst-banking-grid {
+  width: 100%;
+  @include ct-grid(2, 3, 4, 4, 0.5rem);
+}
+
+.banking-item {
+  width: 100%;
+  max-width: 452px;
+  margin: 0 auto;
+  @include ct-flex();
+  padding: 1rem 1rem;
+  aspect-ratio: 452/342;
+  background: url("../images/frame_bank.png") no-repeat center/contain;
+  img {
+    width: 100%;
+  }
+
+  @include desktop {
+    padding: 1rem 2rem;
   }
 }

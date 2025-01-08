@@ -29,12 +29,12 @@ $(function () {
     $(".pined-quick-action").toggleClass("show-quick-action");
   })
 
-  const lstOptionAccount = $("#server-1")
-  lstOptionAccount.click(() => {
-    console.log(lstOptionAccount.text());
-    $("#sel-account").text(lstOptionAccount.text())
-    $(".dropdown-menu").removeClass("show");
-  })
+  // const lstOptionAccount = $("#server-1")
+  // lstOptionAccount.click(() => {
+  //   console.log(lstOptionAccount.text());
+  //   $("#sel-account").text(lstOptionAccount.text())
+  //   $(".dropdown-menu").removeClass("show");
+  // })
 
 });
 
