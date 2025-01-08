@@ -383,38 +383,35 @@
                     </div>
 
 
-                    <div class="box-container-gradient sel-pay-method">
+                    <div  class="box-container-gradient sel-pay-method">
                         <div class="box-container-content">
                             <h3>2. Chọn phương thức thanh toán</h3>
-                            <div class="select-field-ouline">
+                            <div id="lst-payment-method" class="select-field-ouline">
                                 <div class="dropdown">
                                     <button class="input-dropdown-select" type="button" id="sel-services"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Nạp thẻ game
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="sel-services">
-
-
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="dropdown-item nav-item nav-link active" id="nav-home-tab"
-                                                    data-toggle="tab" href="#nav-home" role="tab"
-                                                    aria-controls="nav-home" aria-selected="true">Nạp thẻ game</a>
-                                                <a class="dropdown-item nav-item nav-link" id="nav-profile-tab"
-                                                    data-toggle="tab" href="#nav-profile" role="tab"
-                                                    aria-controls="nav-profile" aria-selected="false">Thanh Toán CK Ngân
-                                                    Hàng</a>
-                                                <a class="dropdown-item nav-item nav-link" id="nav-contact-tab"
-                                                    data-toggle="tab" href="#nav-contact" role="tab"
-                                                    aria-controls="nav-contact" aria-selected="false">Ví điện tử</a>
+                                                <a class="dropdown-item nav-item nav-link active" id="recharge-card-tab"
+                                                    data-toggle="tab" href="#recharge-card" role="tab"
+                                                    aria-controls="recharge-card" aria-selected="true">Nạp thẻ game</a>
+                                                <a class="dropdown-item nav-item nav-link" id="banking-tab"
+                                                    data-toggle="tab" href="#banking" role="tab" aria-controls="banking"
+                                                    aria-selected="false">Thanh Toán CK Ngân Hàng</a>
+                                                <a class="dropdown-item nav-item nav-link" id="e-wallet-tab"
+                                                    data-toggle="tab" href="#e-wallet" role="tab"
+                                                    aria-controls="e-wallet" aria-selected="false">Ví điện tử</a>
                                             </div>
                                         </nav>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                    aria-labelledby="nav-home-tab">
+                                <div class="tab-pane fade show active" id="recharge-card" role="tabpanel"
+                                    aria-labelledby="recharge-card-tab">
                                     <div id="recharge-game-card">
                                         <div class="select-field-ouline">
                                             <div class="dropdown">
@@ -474,10 +471,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                    aria-labelledby="nav-profile-tab">
+                                <div class="tab-pane fade" id="banking" role="tabpanel" aria-labelledby="banking-tab">
                                     <div class="smart-banking">
-                                        <div class="select-field-ouline">
+                                        <div id="sel-pearl" class="select-field-ouline">
                                             <div class="dropdown">
                                                 <button class="input-dropdown-select" type="button" id="sel-coin"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -491,7 +487,7 @@
                                                     </div>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="sel-coin">
-                                                    <div id="vcoin-card" class="dropdown-item">
+                                                    <div id="pearl-1" class="dropdown-item">
                                                         <div class="number-of-pearls">
                                                             <div class="number-of-pearls--img">
                                                                 <img src="./assets/images/ic_pearl.png" alt="">
@@ -501,7 +497,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="gate-card" class="dropdown-item">
+                                                    <div id="pearl-2" class="dropdown-item">
                                                         <div class="number-of-pearls">
                                                             <div class="number-of-pearls--img">
                                                                 <img src="./assets/images/ic_pearl.png" alt="">
@@ -540,8 +536,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                    aria-labelledby="nav-contact-tab">
+                                <div class="tab-pane fade" id="e-wallet" role="tabpanel" aria-labelledby="e-wallet-tab">
                                     <div class="e-wallet">
                                         <div class="select-field-ouline">
                                             <div class="dropdown">
@@ -599,7 +594,7 @@
                                         </div>
 
 
-                                        <div class="select-field-ouline">
+                                        <div id="lst-e-wallet" class="select-field-ouline">
                                             <div class="dropdown">
                                                 <button class="input-dropdown-select" type="button" id="sel-e-wallet"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -633,7 +628,70 @@
                 </div>
 
 
-                <div class="tab-pane fade" id="giftcode" role="tabpanel" aria-labelledby="giftcode-tab">Giftcode
+                <div class="tab-pane fade" id="giftcode" role="tabpanel" aria-labelledby="giftcode-tab">
+                    <div class="box-container-gradient">
+                        <div class="box-container-content">
+                            <div id="input-gift-code">
+
+                                <div class="check-account check-account--not-login">
+                                    <div class="input-field disabled">
+                                        <input type="text" name="" disabled id="gift-code"
+                                            placeholder="Nhập mã Giftcode...">
+                                    </div>
+
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_check_unactive.png" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="check-account check-account--login">
+                                    <div class="input-field">
+                                        <input type="text" name="" id="gift-code" placeholder="Nhập mã Giftcode...">
+                                    </div>
+
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_check_active.png" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="select-field-ouline">
+                                    <div class="dropdown">
+                                        <button class="input-dropdown-select" type="button" id="sel-account-type"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Chọn nhân vật
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="sel-account-type">
+                                            <div id="account-1" class="dropdown-item">
+                                                S1.DreamyCagfe 1
+                                            </div>
+                                            <div id="account-2" class="dropdown-item">
+                                                S1.DreamyCagfe 2
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="text" name="" id="gift-code" placeholder="Nhập mã Giftcode...">
+                                </div>
+
+                                <div class="re-captcha">
+                                </div>
+
+                                <div class="box-action">
+                                    <button type="submit" class="btn-img">
+                                        <img src="./assets/images/btn_xacnhan.png" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="role-get-acocunt-id">
+                                    <a href="">Hướng dẫn xem account ID</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

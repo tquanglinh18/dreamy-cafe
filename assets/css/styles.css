@@ -2313,6 +2313,10 @@ header {
   border: none;
   background-color: transparent;
 }
+.input-field.disabled {
+  color: #878787;
+  background-color: #cdcdcd;
+}
 .input-field input:focus, .input-field input:active, .input-field input:target {
   border: none;
   outline: none;
@@ -2640,4 +2644,29 @@ header {
   .banking-item {
     padding: 1rem 2rem;
   }
+}
+
+.check-account {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.check-account button {
+  border: none;
+  background-color: transparent;
+}
+.check-account button img {
+  width: 80%;
+}
+
+#input-gift-code .role-get-acocunt-id {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+#input-gift-code .role-get-acocunt-id a {
+  text-decoration: underline;
 }

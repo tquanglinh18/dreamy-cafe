@@ -1987,6 +1987,11 @@ header {
     background-color: transparent;
   }
 
+  &.disabled {
+    color: #878787;
+    background-color: #cdcdcd;
+  }
+
   input {
     &:focus,
     &:active,
@@ -2270,5 +2275,28 @@ header {
 
   @include desktop {
     padding: 1rem 2rem;
+  }
+}
+
+.check-account {
+  width: 100%;
+  @include ct-flex(row, space-between, center, 1rem);
+  button {
+    border: none;
+    background-color: transparent;
+    img {
+      width: 80%;
+    }
+  }
+}
+
+#input-gift-code {
+  .role-get-acocunt-id {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    a {
+      text-decoration: underline;
+    }
   }
 }
